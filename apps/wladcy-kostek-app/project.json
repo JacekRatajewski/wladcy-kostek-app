@@ -1,0 +1,87 @@
+{
+  "name": "wladcy-kostek-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "wladcy-kostek-app",
+  "sourceRoot": "apps/wladcy-kostek-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/wladcy-kostek-app",
+        "index": "apps/wladcy-kostek-app/src/index.html",
+        "main": "apps/wladcy-kostek-app/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/wladcy-kostek-app/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/wladcy-kostek-app/src/favicon.ico",
+          "apps/wladcy-kostek-app/src/assets",
+          "apps/wladcy-kostek-app/src/manifest.webmanifest"
+        ],
+        "styles": [
+          "apps/wladcy-kostek-app/src/styles.scss"
+        ],
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/wladcy-kostek-app/ngsw-config.json"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "wladcy-kostek-app:build:production"
+        },
+        "development": {
+          "buildTarget": "wladcy-kostek-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "wladcy-kostek-app:build"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "wladcy-kostek-app:build"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   "name": "wladcy-kostek-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "wladcy-kostek-app",
+  "prefix": "wka",
   "sourceRoot": "apps/wladcy-kostek-app/src",
   "tags": [],
   "targets": {

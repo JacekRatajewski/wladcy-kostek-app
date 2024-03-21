@@ -1,0 +1,13 @@
+.wka-icon:not(.wka-icon--static) {
+    img {
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(92%) sepia(0%) saturate(417%) hue-rotate(87deg) brightness(90%) contrast(96%)
+        }
+    }
+
+    &.wka-icon--active {
+        img {
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(102%) contrast(102%)
+        }
+    }
+}

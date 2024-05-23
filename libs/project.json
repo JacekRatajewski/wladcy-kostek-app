@@ -1,0 +1,27 @@
+{
+  "name": "wka/ui",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/src",
+  "prefix": "wka-ui",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ng-package.json",
+        "tailwindConfig": "libs/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

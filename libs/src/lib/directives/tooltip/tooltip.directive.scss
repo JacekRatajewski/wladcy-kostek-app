@@ -1,0 +1,26 @@
+.wka-tooltip {
+    position: relative;
+
+    &::after {
+        content: '';
+        display: none;
+        width: max-content;
+        padding: 4px 6px;
+        height: fit-content;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    &.wka-tooltip--shown {
+        &::after {
+            content: attr(data-tooltip);
+            display: flex;
+            position: absolute;
+            background-color: $tertiary;
+            border-radius: 0 4px 4px;
+            top: calc(100% - 1rem);
+            left: calc(100% - 1rem);
+            z-index: 9999;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@import '@wka/ui/src/index';
+
+.wka-shapes,
+.wka-glass {
+    position: absolute;
+    inset: 0;
+}
+
+.wka-glass {
+    z-index: 1;
+    backdrop-filter: blur(40px);
+    display: grid;
+    place-items: center;
+}
+
+.wka-shape {
+    position: absolute;
+    width: 350px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.wka-shape-primary {
+    background-color: #ff7a000a;
+}
+
+.wka-shape-secondary {
+    background-color: #5d5fef08;
+}

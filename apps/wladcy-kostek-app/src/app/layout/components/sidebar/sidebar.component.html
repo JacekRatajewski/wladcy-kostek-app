@@ -1,0 +1,27 @@
+<div
+  *ngVar="activeItemId$ | async as activeId"
+  class="w-full h-full border-r-4 border-border relative grid grid-rows-sidebar"
+>
+  <div
+    *ngFor="let item of items; index as i"
+    class="cursor-pointer w-full"
+    [class.absolute]="item.type === SidebarItemType.settings"
+    [class.bottom-0]="item.type === SidebarItemType.settings"
+  >
+    <wka-ui-icon
+      [active]="activeId === i"
+      [routerLink]="item.route"
+      [tooltip]="item.tooltip"
+      [id]="i"
+      [path]="item.iconPath"
+      class="w-full flex justify-center p-4"
+      (click)="item.onClick(i)"
+    ></wka-ui-icon>
+  </div>
+  <div
+    class="w-1 absolute left-full bg-primary h-14 wka-active-bar"
+    [class.wka-active-bar--0]="activeId === 0"
+    [class.wka-active-bar--1]="activeId === 1"
+    [class.wka-active-bar--2]="activeId === 2"
+  ></div>
+</div>

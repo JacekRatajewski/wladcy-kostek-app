@@ -1,5 +1,9 @@
+
+
 .wka-grid-wrapper {
-    grid-template-areas: "header header" "sidebar content";
+    grid-template-areas:
+        "header header"
+        "sidebar content";
 
     .wka-grid-header {
         grid-area: header;
@@ -11,5 +15,7 @@
 
     .wka-grid-content {
         grid-area: content;
+        z-index: 10;
+        position: relative;
     }
 }

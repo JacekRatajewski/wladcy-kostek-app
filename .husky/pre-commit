@@ -1,4 +1,4 @@
-npx nx affected:lint --fix=true
-npx stylelint "**/*.scss" --fix
+npx nx affected:lint
+npx stylelint "**/*.scss"
 npx nx run wladcy-kostek-app:test
 npx nx run wka/ui:test

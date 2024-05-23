@@ -1,4 +1,4 @@
-export interface ISidebarItem {
+export interface SidebarItem {
     route: string
     iconPath: string
     tooltip: string

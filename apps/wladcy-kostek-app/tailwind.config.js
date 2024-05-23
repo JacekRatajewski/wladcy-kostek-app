@@ -14,13 +14,19 @@ module.exports = {
         'sidebar': 'repeat(auto-fill, 100px)'
       },
       gridTemplateColumns: {
-        'sidebar': '105px auto'
-      }
+        'sidebar': '105px auto',
+        'quickbar': 'auto 600px',
+      },
+      width: {
+        'quickbar': 'calc(100% - 3rem)'
+      },
     },
     colors: {
       'primary': '#FF7A00',
       'secondary': '#5D5FEF',
       'tertiary': '#2A2D38',
+      'quaternary': '#777F9E',
+      'quinary': '#101115',
       'background': '#060609',
       'error': '#FF5454',
       'placehodler': '#666666',
@@ -30,7 +36,7 @@ module.exports = {
     fontFamily: {
       'header': ['Lexend'],
       'text': ['Lato']
-    }
+    },
   },
   plugins: [],
 };

@@ -5,12 +5,13 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UiModule } from '@wka/ui';
+import { LiquidComponent } from './components/liquid/liquid.component';
 
 
 @NgModule({
     imports: [CommonModule, RouterModule, UiModule],
-    exports: [HeaderComponent, SidebarComponent, LayoutComponent],
-    declarations: [HeaderComponent, SidebarComponent, LayoutComponent],
+    exports: [HeaderComponent, SidebarComponent, LayoutComponent, LiquidComponent],
+    declarations: [HeaderComponent, SidebarComponent, LayoutComponent, LiquidComponent],
     providers: [],
 })
 export class LayoutModule { }

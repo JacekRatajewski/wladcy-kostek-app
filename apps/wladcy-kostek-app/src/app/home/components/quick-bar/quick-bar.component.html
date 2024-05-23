@@ -1,0 +1,35 @@
+<div
+  class="relative flex flex-col w-full h-full bg-gradient-to-b from-tertiary to-quaternary z-10 border-l-4 border-border"
+>
+  <label class="ml-6 mt-8 mb-8 font-header text-4xl">Moje Aplikacje</label>
+  <div *ngVar="isLogged$ | async as isLogged" class="w-full h-full contents">
+    <ng-container *ngIf="isLogged === true; then loggedIn; else loggedOut">
+    </ng-container>
+    <ng-template #loggedIn>
+      <div *ngVar="latestApps$ | async as latestApps" class="grid grid-cols-3 grid-rows-3 p-6">
+        <div
+          class="w-40 h-40 rounded-lg border-border border-4 bg-cover bg-center wka-overlay cursor-pointer justify-self-center"
+          *ngFor="let app of latestApps"
+          [ngStyle]="{
+            backgroundImage:
+              'url(' +
+              app.background +
+              ')'
+          }"
+        >
+          <span class="flex rounded-lg absolute justify-center items-center w-full h-full z-10 font-text text-text text-2xl text-wrap text-center">{{ app.name }}</span>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #loggedOut>
+      <div class="m-6 bg-quinary w-quickbar h-full box-border rounded-lg">
+        <div
+          class="flex w-full h-full justify-center items-center text-text font-text text-2xl text-center"
+        >
+          Zaloguj się aby uzyskać <br />
+          dostęp do swoich aplikacji
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule, importProvidersFrom, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LayoutModule } from './layout/layout.module';
 import { RouterModule, provideRouter } from '@angular/router';
@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { UiModule } from '@wka/ui';
 import { provideServiceWorker } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { provideServiceWorker } from '@angular/service-worker';
     HomeModule,
   ],
   providers: [
+    importProvidersFrom(HttpClientModule),
     provideRouter(appRoutes),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),

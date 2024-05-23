@@ -1,5 +1,5 @@
 .wka-active-bar {
-    transition: top ease;
+    transition: top ease 200ms;
 
     &.wka-active-bar--0 {
         top: 25px;

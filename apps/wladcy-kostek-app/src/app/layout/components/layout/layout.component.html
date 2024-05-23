@@ -1,7 +1,10 @@
-<div class="wka-grid-wrapper grid grid-cols-sidebar grid-rows-header w-screen h-screen bg-background text-text font-text">
-    <wka-header class="wka-grid-header"></wka-header>
-    <wka-sidebar class="wka-grid-sidebar"></wka-sidebar>
-    <div class="wka-grid-content">
-        <ng-content></ng-content>
-    </div>
+<div
+  class="wka-grid-wrapper grid grid-cols-sidebar grid-rows-header w-screen h-screen bg-background text-text font-text overflow-hidden"
+>
+  <wka-header class="wka-grid-header"></wka-header>
+  <wka-sidebar class="wka-grid-sidebar"></wka-sidebar>
+  <div class="wka-grid-content">
+    <ng-content></ng-content>
+    <wka-liquid></wka-liquid>
+  </div>
 </div>

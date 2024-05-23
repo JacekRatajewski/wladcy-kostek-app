@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ISidebarItem, SidebarItemType } from './models/sidebar-item.model';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { SidebarItem, SidebarItemType } from './models';
 
 @Component({
   selector: 'wka-sidebar',
@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  public items: ISidebarItem[] = [
+  public items: SidebarItem[] = [
     {
       tooltip: 'Home',
       iconPath: 'assets/icons/home.svg',

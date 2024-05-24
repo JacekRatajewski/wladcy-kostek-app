@@ -30,7 +30,7 @@ jobs:
           name: dist
           path: dist/apps
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: 20.82.145.167
           port: 21

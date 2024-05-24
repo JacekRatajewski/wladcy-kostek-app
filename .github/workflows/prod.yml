@@ -17,20 +17,12 @@ jobs:
       - run: npm ci
       - run: npx nx run wladcy-kostek-app:build --configuration=production
       
-      - name: FTP Interactions
-        uses: priradev/ftp-interactions@v0.2.9-beta
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: 20.82.145.167
-          # Port for the FTP host.
+          server: 20.82.145.167
           port: 21
-          # Username for the FTP host.
           username: wkenv-ftp
-          # Password for the FTP host.
           password: u0RZ16EFAnAx
-          # Local directory from which to upload.
-          localDir: dist/apps
-          # FTP Action: None | Copy | DeleteAppOfflineHtm.
-          ftpAction: Copy
-          # Ignore certificate errors.
-          ignoreCertificateErrors: true
+          local-dir: dist/apps
           

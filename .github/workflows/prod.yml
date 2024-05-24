@@ -28,7 +28,7 @@ jobs:
           # Password for the FTP host.
           password: u0RZ16EFAnAx
           # Local directory from which to upload.
-          localDir: dist/apps/wladcy-kostek-app
+          localDir: dist/apps
           # FTP Action: None | Copy | DeleteAppOfflineHtm.
           ftpAction: Copy
           # Ignore certificate errors.

@@ -18,11 +18,11 @@ jobs:
       - run: npx nx run wladcy-kostek-app:build --configuration=production
       
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: sand4rt/ftp-deployer@v1.8
         with:
-          server: 20.82.145.167
+          host: 20.82.145.167
           port: 21
           username: wkenv-ftp
           password: u0RZ16EFAnAx
-          local-dir: dist/apps/
+          local_folder: dist/apps/
           

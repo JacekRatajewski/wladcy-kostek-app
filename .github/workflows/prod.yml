@@ -24,7 +24,7 @@ jobs:
           # Port for the FTP host.
           port: 21
           # Username for the FTP host.
-          username: wkenv
+          username: wkenv-ftp
           # Password for the FTP host.
           password: u0RZ16EFAnAx
           # Local directory from which to upload.

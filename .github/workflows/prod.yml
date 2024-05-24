@@ -19,19 +19,16 @@ jobs:
       - uses: actions/upload-artifact@v4.3.3
         with:
           name: dist
-          path: dist
+          path: dist/apps
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: actions/download-artifact@v4.1.7
         with:
           name: dist
-          path: dist
+          path: dist/apps
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -39,4 +36,3 @@ jobs:
           port: 21
           username: wkenv-ftp
           password: ${{ secrets.ftp_password }}
-          local-dir: dist/apps/

@@ -5,16 +5,20 @@ on:
 jobs:
   my_job:
     name: deploy to prod
-    runs-on: windows-2022
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
         with:
           node-version: '20.11.1'
-      - name: Install Dependencies & Build
-        run: |
-          npm install
-          npx nx run wladcy-kostek-app:build --configuration=production
+          cache: 'npm'
+      - run: npm ci
+      
+      - uses: nrwl/nx-set-shas@v4
+      - run: npx nx run wladcy-kostek-app:build --configuration=production
+      
       - name: FTP Interactions
         uses: priradev/ftp-interactions@v0.2.9-beta
         with:

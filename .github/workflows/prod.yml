@@ -30,8 +30,9 @@ jobs:
           name: dist
           path: dist/apps
       - name: FTP Deploy
-        uses: sebastianpopp/ftp-action@v2.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.0.0
         with:
-          host: 20.82.145.167
-          user: wkenv-ftp
+          server: 20.82.145.167
+          port: 21
+          username: wkenv-ftp
           password: ${{ secrets.ftp_password }}

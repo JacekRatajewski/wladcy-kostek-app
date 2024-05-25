@@ -50,6 +50,10 @@ jobs:
           cache: 'npm'
       - run: npm i -g @bubblewrap/cli
       - run: cd ./android
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
       - run: bubblewrap build --signingKeyPath="${{ secrets.android_key }}" --signingKeyAlias="${{ secrets.android_key }}" 
       - uses: actions/upload-artifact@v4.3.3
         with:

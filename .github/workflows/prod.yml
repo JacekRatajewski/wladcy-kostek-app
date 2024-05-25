@@ -48,7 +48,7 @@ jobs:
         with:
           node-version: '20.11.1'
           cache: 'npm'
-      - run: npm ci
+      - run: npm i -g @bubblewrap/cli
       - run: cd ./android
       - run: bubblewrap build --signingKeyPath="${{ secrets.android_key }}" --signingKeyAlias="${{ secrets.android_key }}" 
       - uses: actions/upload-artifact@v4.3.3

@@ -53,7 +53,7 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '11'
-      - run: no | bubblewrap build --signingKeyPath="${{ secrets.android_key }}" --signingKeyAlias="${{ secrets.android_key }}" 
+      - uses: gradle/actions@v3.3.2
       - uses: actions/upload-artifact@v4.3.3
         with:
           name: android

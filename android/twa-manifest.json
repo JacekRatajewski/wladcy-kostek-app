@@ -20,8 +20,8 @@
     "path": "F:\\Repos\\wladcy-kostek-app\\android\\android.keystore",
     "alias": "wka"
   },
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "2",
+  "appVersionCode": 2,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "http://192.168.0.12:8080/manifest.webmanifest",
@@ -39,5 +39,5 @@
   "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "1"
+  "appVersion": "2"
 }

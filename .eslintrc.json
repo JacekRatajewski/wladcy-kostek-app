@@ -6,6 +6,7 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "@angular-eslint/no-output-native": ["off"],
         "@typescript-eslint/ban-ts-comment": [
           "error",
           { "ts-ignore": "allow-with-description" }

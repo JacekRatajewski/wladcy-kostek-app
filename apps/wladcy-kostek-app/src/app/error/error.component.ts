@@ -6,7 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 // @ts-ignore: Sometimes installed modules are not exacly compatible with .ts but they works.
 import DiceBox from '@3d-dice/dice-box-threejs';
 
@@ -38,9 +38,9 @@ export class ErrorComponent implements OnInit, AfterViewInit {
     strength: 1
   };
   private errror_messages = {
-    404: 'Opss... Something went wrong',
+    404: 'Opss... Coś poszło nie tak.',
   };
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.errorCode = this.route.snapshot.paramMap.get('error_code') ?? '404';
@@ -67,5 +67,9 @@ export class ErrorComponent implements OnInit, AfterViewInit {
 
   public getErrorMessage() {
     return this.errror_messages[this.errorCode as keyof object];
+  }
+
+  public goHome(event: any) {
+    this.router.navigate([''])
   }
 }

@@ -10,8 +10,14 @@ import { LoaderInterceptor } from './components/loader/loader.interceptor.servic
 import { CommonModule } from '@angular/common';
 import { GlobalErrorHandlerInterceptor } from './services/error.interceptor.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ButtonComponent } from './components/button/button.component';
 
-const components = [IconComponent, LoaderComponent, SpinnerComponent];
+const components = [
+  IconComponent,
+  LoaderComponent,
+  SpinnerComponent,
+  ButtonComponent,
+];
 const services = [LoaderService];
 const directives = [TooltipDirective, VarDirective];
 const providers = [

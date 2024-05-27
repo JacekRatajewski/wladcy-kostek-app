@@ -9,22 +9,10 @@ export class QuickBarService {
   constructor(private http: HttpClient) {}
 
   getLatestApps$(): Observable<LatestApp[]> {
-    // return of([
-    //   {
-    //     name: 'Sonar',
-    //     background: 'assets/backgrounds/sonar.png',
-    //   },
-    //   {
-    //     name: 'Terminal',
-    //     background: 'assets/backgrounds/terminal.png',
-    //   },
-    //   {
-    //     name: 'Prorok Codzienny',
-    //     background: 'assets/backgrounds/prorok.png',
-    //   },
-    // ] as LatestApp[]);
     return this.http
-      .get('https://api.restful-api.dev/objects')
+      .get(
+        'https://requestly.tech/api/mockv2/latestApps?rq_uid=ABNVuWTLMuNcPfsNEiRKv3e8lsd2'
+      )
       .pipe(map((res: any) => (res as BaseResponse<LatestApp[]>).response));
   }
 }

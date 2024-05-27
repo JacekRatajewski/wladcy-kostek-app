@@ -21,6 +21,10 @@ module.exports = {
       'border': '#2A2D38',
       'text':'#ffffff'
     },
+    fontFamily: {
+      'header': ['Lexend'],
+      'text': ['Lato']
+    },
   },
   plugins: [],
 };

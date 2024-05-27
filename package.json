@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@3d-dice/dice-box": "^1.0.12",
     "@angular/animations": "~17.1.0",
     "@angular/common": "~17.1.0",
     "@angular/compiler": "~17.1.0",
@@ -26,6 +27,7 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
+    "@3d-dice/dice-box-threejs": "^0.0.12",
     "@angular-devkit/build-angular": "~17.1.0",
     "@angular-devkit/core": "~17.1.0",
     "@angular-devkit/schematics": "~17.1.0",

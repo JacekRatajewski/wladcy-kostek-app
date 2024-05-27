@@ -1,0 +1,29 @@
+
+@import '@wka/ui/src/index';
+
+.wka-loading-bar-container {
+    height: 2px;
+    width: 100%;
+    background-color: $placehodler;
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  .wka-loading-bar {
+    height: 100%;
+    width: 50%;
+    background-color: $secondary;
+    position: absolute;
+    left: -50%;
+    animation: loading 2s ease-in 0.5s infinite;
+  }
+  
+  @keyframes loading {
+   0% {
+    transform:translateX(0)
+   }
+   
+   100% {
+    transform:translateX(400%)
+   }
+  }

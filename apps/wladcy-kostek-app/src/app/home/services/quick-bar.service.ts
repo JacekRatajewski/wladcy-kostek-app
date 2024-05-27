@@ -8,25 +8,23 @@ import { BaseResponse } from '../../../shared/models/base-response.model';
 export class QuickBarService {
   constructor(private http: HttpClient) {}
 
-  getLatestApps$(): Observable<BaseResponse<LatestApp[]>> {
-    return of({
-      response: [
-        {
-          name: 'Sonar',
-          background: 'assets/backgrounds/sonar.png',
-        },
-        {
-          name: 'Terminal',
-          background: 'assets/backgrounds/terminal.png',
-        },
-        {
-          name: 'Prorok Codzienny',
-          background: 'assets/backgrounds/prorok.png',
-        },
-      ],
-    } as BaseResponse<LatestApp[]>);
-    this.http
-      .get('')
-      .pipe(map((res: any) => (res as BaseResponse<LatestApp[]>).response)); //TODO ERROR HANDLING
+  getLatestApps$(): Observable<LatestApp[]> {
+    // return of([
+    //   {
+    //     name: 'Sonar',
+    //     background: 'assets/backgrounds/sonar.png',
+    //   },
+    //   {
+    //     name: 'Terminal',
+    //     background: 'assets/backgrounds/terminal.png',
+    //   },
+    //   {
+    //     name: 'Prorok Codzienny',
+    //     background: 'assets/backgrounds/prorok.png',
+    //   },
+    // ] as LatestApp[]);
+    return this.http
+      .get('https://api.restful-api.dev/objects')
+      .pipe(map((res: any) => (res as BaseResponse<LatestApp[]>).response));
   }
 }

@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { UiModule } from '@wka/ui';
 import { provideServiceWorker } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
       registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ErrorComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

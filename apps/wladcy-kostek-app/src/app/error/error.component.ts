@@ -1,4 +1,3 @@
-
 import {
   AfterViewInit,
   Component,
@@ -7,8 +6,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// @ts-ignore: Sometimes installed modules are not exacly compatible with .ts but they works.
-import DiceBox from '@3d-dice/dice-box-threejs';
+// @ts-ignore: Sometimes installed modules are not exacly compatible with .ts but they work.
+import { Cp } from '../../shared/external/dice.scripts.js';
 
 @Component({
   selector: 'wka-error',
@@ -35,7 +34,7 @@ export class ErrorComponent implements OnInit, AfterViewInit {
     gravity_multiplier: 300,
     light_intensity: 0.7,
     baseScale: 125,
-    strength: 1
+    strength: 1,
   };
   private errror_messages = {
     404: 'Opss... Coś poszło nie tak.',
@@ -48,7 +47,7 @@ export class ErrorComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const Box = new DiceBox(
+    const Box = new Cp(
       `#${this.diceContainer.nativeElement.id}`,
       this.defaultConfig
     );
@@ -60,7 +59,7 @@ export class ErrorComponent implements OnInit, AfterViewInit {
               ?.split('')
               .join(',')}`
           );
-        }, 200);
+        }, 1000);
       })
       .catch((e: any) => console.error(e));
   }
@@ -70,6 +69,6 @@ export class ErrorComponent implements OnInit, AfterViewInit {
   }
 
   public goHome(event: any) {
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
 }

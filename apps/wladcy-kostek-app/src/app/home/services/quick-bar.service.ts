@@ -11,7 +11,7 @@ export class QuickBarService {
   getLatestApps$(): Observable<LatestApp[]> {
     return this.http
       .get(
-        'https://requestly.tech/api/mockv2/latestApps?rq_uid=ABNVuWTLMuNcPfsNEiRKv3e8lsd2'
+        'http://localhost:4200/latestApps'
       )
       .pipe(map((res: any) => (res as BaseResponse<LatestApp[]>).response));
   }

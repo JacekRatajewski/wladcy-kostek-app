@@ -23,7 +23,8 @@
         "assets": [
           "apps/wladcy-kostek-app/src/favicon.ico",
           "apps/wladcy-kostek-app/src/assets",
-          "apps/wladcy-kostek-app/src/manifest.webmanifest"
+          "apps/wladcy-kostek-app/src/manifest.webmanifest",
+          "apps/wladcy-kostek-app/src/mockServiceWorker.js"
         ],
         "styles": [
           "apps/wladcy-kostek-app/src/styles.scss"

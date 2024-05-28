@@ -1,4 +1,3 @@
 npx nx affected:lint
 npx stylelint "**/*.scss"
-npx nx run wladcy-kostek-app:test
-npx nx run wka/ui:test
+npx nx run-many --all --target=test --parallel

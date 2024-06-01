@@ -1,0 +1,29 @@
+<wka-ui-dialog>
+  <div dialog-header><h2 class="font-header text-lg">Ustawienia</h2></div>
+  <div dialog-body class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+      <h4 class="mb-2">Wygląd</h4>
+      <wka-ui-theme-picker [themes]="themes"></wka-ui-theme-picker>
+      <wka-ui-slider
+        [isChecked]="true"
+        label="Płyn w tle"
+        [id]="'wkaLiquidEnable'"
+      ></wka-ui-slider>
+    </div>
+    <div class="flex flex-col gap-2 mt-4">
+      <h4 class="mb-2">Powiadomienia</h4>
+      <wka-ui-slider
+        [isChecked]="true"
+        label="Powiadomienia przeglądarki"
+        [id]="'wkaBrowserNotificationsEnable'"
+      ></wka-ui-slider>
+    </div>
+  </div>
+  <div dialog-footer class="text-right">
+    <wka-ui-button
+      (click)="closeDialog($event)"
+      [color]="ButtonColors.secondary"
+      >Close</wka-ui-button
+    >
+  </div>
+</wka-ui-dialog>

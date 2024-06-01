@@ -1,1 +1,16 @@
-@import './themes/dark'
+$primary: var(--primary);
+$secondary: var(--secondary);
+$tertiary: var(--tertiary);
+$quaternary: var(--quaternary);
+$quinary: var(--quinary);
+$background: var(--background);
+$error: var(--error);
+$placehodler: var(--placehodler);
+$border: var(--border);
+$text: var(--text);
+$overlay: var(--overlay);
+$shape1: var(--shape-1);
+$shape2: var(--shape-2);
+
+@import './themes/dark';
+@import './themes/light';

@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 // @ts-ignore: Sometimes installed modules are not exacly compatible with .ts but they work.
-import { Cp } from '../../shared/external/dice.scripts.js';
+import Cp from '../../shared/external/dice.scripts.js';
 
 @Component({
   selector: 'wka-error',
@@ -20,8 +20,7 @@ export class ErrorComponent implements OnInit, AfterViewInit {
   private defaultConfig = {
     framerate: 1 / 60,
     color_spotlight: 0xefdfd5,
-    shadows: true,
-    theme_surface: 'default',
+    shadows: false,
     theme_customColorset: {
       name: 'Error',
       category: 'Damage Types',
@@ -31,10 +30,10 @@ export class ErrorComponent implements OnInit, AfterViewInit {
       description: 'Error',
     },
     theme_material: 'plastic',
-    gravity_multiplier: 300,
+    gravity_multiplier: 200,
     light_intensity: 0.7,
     baseScale: 125,
-    strength: 1,
+    strength: 1.5,
   };
   private errror_messages = {
     404: 'Opss... Coś poszło nie tak.',
@@ -53,13 +52,13 @@ export class ErrorComponent implements OnInit, AfterViewInit {
     );
     Box.initialize()
       .then(() => {
-        setTimeout(() => {
-          Box.roll(
+        setTimeout(async () => {
+          await Box.roll(
             `${this.errorCode?.length}d10@${this.errorCode
               ?.split('')
               .join(',')}`
           );
-        }, 1000);
+        }, 300);
       })
       .catch((e: any) => console.error(e));
   }

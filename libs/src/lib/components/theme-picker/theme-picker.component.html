@@ -1,0 +1,21 @@
+<div class="flex gap-4">
+  <div
+    [attr.data-theme]="theme.key"
+    *ngFor="let theme of themes"
+    class="relative bg-tertiary text-text min-w-20 min-h-14 cursor-pointer rounded-sm"
+    (click)="selectTheme(theme.key)"
+  >
+    <div class="absolute left-1 top-1 font-text text-sm">{{ theme.name }}</div>
+    <div
+      class="bg-background min-w-16 min-h-7 absolute bottom-0 right-0 rounded-sm"
+    ></div>
+    <wka-ui-radio
+      class="absolute right-1 top-1 cursor-pointer"
+      type="radio"
+      [id]="'wkaTheme-' + theme.name"
+      [name]="'theme'"
+      [value]="theme.key"
+      [checked]="theme.selected"
+    ></wka-ui-radio>
+  </div>
+</div>

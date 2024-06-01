@@ -1,0 +1,44 @@
+@import '@wka/ui/src/index';
+
+.wka-slider-label {
+    display: inline-block;
+    height: 17px;
+    position: relative;
+    width: 30px;
+}
+
+.wka-slider-label input {
+    display: none;
+}
+
+.wka-slider {
+    background-color: $placehodler;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.wka-slider::before {
+    background-color: $text;
+    bottom: 2px;
+    content: "";
+    height: 13px;
+    left: 2px;
+    position: absolute;
+    transition: .4s;
+    width: 13px;
+}
+
+input:checked+.wka-slider {
+    background-color: $secondary;
+}
+
+input:checked+.wka-slider::before {
+    transform: translateX(13px);
+}
+
+.wka-slider.rounded-full::before {
+    border-radius: 50%;
+}

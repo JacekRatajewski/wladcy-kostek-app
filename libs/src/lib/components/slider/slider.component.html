@@ -1,0 +1,7 @@
+<div (click)="onCheck()" class="w-full flex cursor-pointer items-center">
+  <label class="mr-8 font-text text-text text-sm cursor-pointer">{{ label }}</label>
+  <label class="wka-slider-label cursor-pointer" for="checkbox">
+    <input type="checkbox" [id]="id" [checked]="isChecked" />
+    <div class="wka-slider rounded-full"></div>
+  </label>
+</div>

@@ -1,0 +1,26 @@
+@import '@wka/ui/src/index';
+
+.wka-dialog {
+    transition: all 0.3s;
+    animation: zoom-in 300ms forwards ease-in;
+    left: 50%;
+    top: 50%;
+
+    &::backdrop {
+        background-color: $overlay;
+        transition: all 0.4s;
+        animation: fadeIn 400ms forwards ease-in;
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

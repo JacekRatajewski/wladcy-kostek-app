@@ -3,6 +3,7 @@ import { SidebarComponent } from './sidebar.component';
 import { UiModule } from '@wka/ui';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BehaviorSubject } from 'rxjs';
+import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
 
 describe('SidebarComponent', () => {
   let component: SidebarComponent;
@@ -11,7 +12,7 @@ describe('SidebarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [UiModule, RouterTestingModule],
-      declarations: [SidebarComponent]
+      declarations: [SidebarComponent, SettingsDialogComponent]
     }).compileComponents();
 
     fixture = TestBed.createComponent(SidebarComponent);

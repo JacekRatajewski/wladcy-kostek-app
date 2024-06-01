@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoaderService {
   private apiCount = 0;
-  private isLoadingSubject = new BehaviorSubject<boolean>(false);
-  public isLoading$ = this.isLoadingSubject.asObservable();
+  public isLoading$ = new BehaviorSubject<boolean>(false);
 
   showLoader() {
     if (this.apiCount === 0) {
-      this.isLoadingSubject.next(true);
+      this.isLoading$.next(true);
     }
     this.apiCount++;
   }
@@ -19,7 +18,7 @@ export class LoaderService {
   hideLoader() {
     this.apiCount--;
     if (this.apiCount === 0) {
-      this.isLoadingSubject.next(false);
+      this.isLoading$.next(false);
     }
   }
 }

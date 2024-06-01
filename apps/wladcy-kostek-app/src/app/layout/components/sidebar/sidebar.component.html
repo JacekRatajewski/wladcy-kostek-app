@@ -20,8 +20,7 @@
   </div>
   <div
     class="w-1 absolute left-full bg-primary h-14 wka-active-bar"
-    [class.wka-active-bar--0]="activeId === 0"
-    [class.wka-active-bar--1]="activeId === 1"
-    [class.wka-active-bar--2]="activeId === 2"
+    [class]="'wka-active-bar--' + activeId"
   ></div>
 </div>
+<wka-settings-dialog></wka-settings-dialog>

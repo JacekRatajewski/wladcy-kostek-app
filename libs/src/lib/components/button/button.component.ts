@@ -7,9 +7,8 @@ import { ButtonColors } from './models/colors.model';
   styleUrl: 'button.component.scss',
 })
 export class ButtonComponent {
-  @Input() label!: string;
   @Input() class!: string;
-  @Input() color = 'primary';
+  @Input() color = ButtonColors.primary;
   @Input() public onClick = (event: any) => {
     this.click.emit(event);
   };

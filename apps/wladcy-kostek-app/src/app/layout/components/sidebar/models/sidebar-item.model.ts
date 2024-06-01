@@ -1,5 +1,5 @@
 export interface SidebarItem {
-    route: string
+    route?: string
     iconPath: string
     tooltip: string
     type?: SidebarItemType

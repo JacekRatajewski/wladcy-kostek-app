@@ -6,12 +6,20 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UiModule } from '@wka/ui';
 import { LiquidComponent } from './components/liquid/liquid.component';
+import { SettingsDialogComponent } from './components/settings-dialog/settings-dialog.component';
 
+const components = [
+  HeaderComponent,
+  SidebarComponent,
+  LayoutComponent,
+  LiquidComponent,
+  SettingsDialogComponent,
+];
 
 @NgModule({
-    imports: [CommonModule, RouterModule, UiModule],
-    exports: [HeaderComponent, SidebarComponent, LayoutComponent, LiquidComponent],
-    declarations: [HeaderComponent, SidebarComponent, LayoutComponent, LiquidComponent],
-    providers: [],
+  imports: [CommonModule, RouterModule, UiModule],
+  exports: [...components],
+  declarations: [...components],
+  providers: [],
 })
-export class LayoutModule { }
+export class LayoutModule {}

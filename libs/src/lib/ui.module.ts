@@ -11,14 +11,24 @@ import { CommonModule } from '@angular/common';
 import { GlobalErrorHandlerInterceptor } from './services/error.interceptor.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { ButtonComponent } from './components/button/button.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FeatureFlagsService } from './services/feature-flag.service';
+import { ThemePickerComponent } from './components/theme-picker/theme-picker.component';
+import { ThemeService } from './services/theme.service';
+import { SliderComponent } from './components/slider/slider.component';
+import { RadioComponent } from './components/radio/radio.component';
 
 const components = [
   IconComponent,
   LoaderComponent,
   SpinnerComponent,
   ButtonComponent,
+  DialogComponent,
+  ThemePickerComponent,
+  SliderComponent,
+  RadioComponent
 ];
-const services = [LoaderService];
+const services = [LoaderService, FeatureFlagsService, ThemeService];
 const directives = [TooltipDirective, VarDirective];
 const providers = [
   {

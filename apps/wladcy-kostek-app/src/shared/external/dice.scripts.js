@@ -1,4 +1,3 @@
-
 var zo = Object.defineProperty;
 var Bo = (h, e, t) =>
   e in h
@@ -26808,7 +26807,7 @@ const Sp = {
     onAddDiceComplete: () => {},
     onRemoveDiceComplete: () => {},
   };
-export class Cp {
+class Cp {
   constructor(e, t = {}) {
     (this.initialized = !1),
       (this.container = document.querySelector(e)),
@@ -26892,7 +26891,7 @@ export class Cp {
       this.renderer.setClearColor(0, 0),
       this.camera = new gt(
         20,
-        (this.container.clientWidth / 2) / (this.container.clientHeight / 2),
+        (this.container.clientWidth / 2) /  (this.container.clientHeight / 2),
         1,
         this.cameraHeight.max * 1.3
       )
@@ -27749,4 +27748,4 @@ export class Cp {
       this.animateThrow(this.running, e);
   }
 }
-
+export { Cp as default };

@@ -1,0 +1,33 @@
+@import '@wka/ui/src/index';
+
+input[type="radio"]::after {
+    all: unset;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: $background;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $background;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked::after {
+    all: unset;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    top: -4px;
+    left: -1px;
+    position: relative;
+    background-color: $secondary;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $secondary;
+    cursor: pointer;
+}

@@ -26,6 +26,7 @@ import { ErrorComponent } from './error/error.component';
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    { provide: 'featureFlagPath', useValue: 'assets/json/feature-flags.json' },
   ],
   declarations: [AppComponent, ErrorComponent],
   bootstrap: [AppComponent],

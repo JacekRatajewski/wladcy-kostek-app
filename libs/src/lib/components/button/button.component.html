@@ -1,10 +1,10 @@
 <button
-  class="relative text-text font-text rounded-full pt-2 pb-2 pr-4 pl-4"
+  class="relative outline-none text-text font-text rounded-full pt-1 pb-1 pr-4 pl-4 hover:bg-opacity-80"
   [class.bg-primary]="color === ButtonColors.primary"
   [class.bg-secondary]="color === ButtonColors.secondary"
   [class.bg-error]="color === ButtonColors.error"
   (click)="onClick($event)"
   type="button"
 >
-  {{ label }}
+  <ng-content></ng-content>
 </button>

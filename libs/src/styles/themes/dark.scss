@@ -1,9 +1,17 @@
-$primary: #FF7A00;
-$secondary: #5D5FEF;
-$tertiary: #2A2D38;
-$background: #060609;
-$error: #FF5454;
-$placehodler: #666;
-$border: #2A2D38;
-$text: #fff;
-$overlay: #060609cc;
+@layer base {
+    [data-theme='dark'] {
+        --primary: #FF7A00;
+        --secondary: #5D5FEF;
+        --tertiary: #2A2D38;
+        --quaternary: #777F9E;
+        --quinary: #101115;
+        --background: #060609;
+        --error: #FF5454;
+        --placehodler: #666;
+        --border: #2A2D38;
+        --text: #fff;
+        --overlay: #060609cc;
+        --shape-1: #ff7a000a;
+        --shape-2: #5d5fef08;
+    }
+}

@@ -10,33 +10,51 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        'header': '135px auto',
-        'sidebar': 'repeat(auto-fill, 100px)'
+        header: '135px auto',
+        sidebar: 'repeat(auto-fill, 100px)',
       },
       gridTemplateColumns: {
-        'sidebar': '105px auto',
-        'quickbar': 'auto 600px',
+        sidebar: '105px auto',
+        quickbar: 'auto 600px',
       },
       width: {
-        'quickbar': 'calc(100% - 3rem)'
+        quickbar: 'calc(100% - 3rem)',
+      },
+      spacing: {
+        'dialog-sm': '320px',
+        'dialog-md': '540px',
+        'dialog-lg': '780px',
       },
     },
     colors: {
-      'primary': '#FF7A00',
-      'secondary': '#5D5FEF',
-      'tertiary': '#2A2D38',
-      'quaternary': '#777F9E',
-      'quinary': '#101115',
-      'background': '#060609',
-      'error': '#FF5454',
-      'placehodler': '#666666',
-      'border': '#2A2D38',
-      'text':'#ffffff'
+      primary: 'var(--primary)',
+      secondary: 'var(--secondary)',
+      tertiary: 'var(--tertiary)',
+      quaternary: 'var(--quaternary)',
+      quinary: 'var(--quinary)',
+      background: 'var(--background)',
+      error: 'var(--error)',
+      placehodler: 'var(--placehodler)',
+      border: 'var(--border)',
+      text: 'var(--text)',
+      overlay: 'var(--overlay)',
     },
     fontFamily: {
-      'header': ['Lexend'],
-      'text': ['Lato']
+      header: ['Lexend'],
+      text: ['Lato'],
     },
   },
+  safelist: [
+    'primary',
+    'secondary',
+    'tertiary',
+    'quaternary',
+    'quinary',
+    'background',
+    'error',
+    'placehodler',
+    'border',
+    'text',
+  ],
   plugins: [],
 };

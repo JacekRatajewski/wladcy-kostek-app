@@ -19,6 +19,8 @@ export * from './lib/components/loader/loader.service';
 export * from './lib/components/loader/loader.interceptor.service';
 // FABRICS
 export * from './lib/components/spinner/spinner.fabric';
+export * from './lib/fabrics/error.fabric';
 // MODELS
 export * from './lib/components/theme-picker/model/theme.model';
 export * from './lib/components/button/models/colors.model';
+export * from './lib/models/base-response.model';

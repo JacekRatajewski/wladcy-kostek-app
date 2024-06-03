@@ -18,6 +18,8 @@
     right: 0;
     top: 0;
     transition: .4s;
+    width: 30px;
+    height: 17px;
 }
 
 .wka-slider::before {
@@ -31,11 +33,11 @@
     width: 13px;
 }
 
-input:checked+.wka-slider {
+.wka-slider-input:checked+.wka-slider {
     background-color: $secondary;
 }
 
-input:checked+.wka-slider::before {
+.wka-slider-input:checked+.wka-slider::before {
     transform: translateX(13px);
 }
 

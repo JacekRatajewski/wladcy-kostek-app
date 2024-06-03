@@ -1,6 +1,52 @@
-<div class="w-full h-full grid grid-cols-quickbar">
-    <div></div>
-    <div class="hidden lg:block">
-        <wka-quick-bar></wka-quick-bar>
+<div class="w-full h-full grid lg:grid-cols-quickbar absolute z-50">
+  <div
+    *ngIf="error !== undefined; else error"
+    class="wka-news-container grid lg:grid-cols-3 sm:grid-cols-3 grid-rows-news gap-8 p-8 overflow-auto"
+  >
+    <div
+      *ngFor="let newsItem of news"
+      class="w-full h-full min-h-52 flex"
+      [class.wka-big-news]="newsItem.id === 0"
+    >
+      <div
+        *ngVar="newsItem.id === 0 as isBigNews"
+        class="wka-news rounded-xl bg-center bg-cover relative flex w-full overflow-hidden cursor-pointer"
+        [ngStyle]="{
+          backgroundImage: 'url(' + newsItem.imageUrl + ')'
+        }"
+      >
+        <div class="absolute bottom-0 left-0 bg-overlay p-2">
+          <div
+            [class]="
+              'text-text font-text ' +
+              (!isBigNews ? 'lg:text-xl text-xl' : 'lg:text-4xl text-xl') +
+              ' text-ellipsis w-full overflow-hidden mb-2'
+            "
+          >
+            {{ newsItem.title.substring(0, 35) + '...' }}
+          </div>
+          <div
+            [class]="
+              'text-text font-text ' +
+              (!isBigNews ? 'lg:text-xs text-xs' : 'lg:text-lg text-xs') +
+              ' text-ellipsis w-full overflow-hidden'
+            "
+          >
+            {{
+              newsItem.shortDescription.substring(0, 180) +
+                '...'
+            }}
+          </div>
+        </div>
+      </div>
     </div>
+    <wka-ui-spinner class="lg:w-4/6"></wka-ui-spinner>
+    <div *ngIf="news.length <= 6" class="lg:absolute bottom-4 text-center sm:relative lg:w-4/6 w-full cursor-pointer text-secondary underline" (click)="getFullNews()">Załaduj więcej...</div>
+  </div>
+  <ng-template #error>
+    <div>{{ error }}</div>
+  </ng-template>
+  <div class="hidden lg:block">
+    <wka-quick-bar></wka-quick-bar>
+  </div>
 </div>

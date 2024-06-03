@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { QuickBarComponent } from './quick-bar.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { QuickBarService } from '../../services/quick-bar.service';
+import { AppsService } from '../../services/apps.service';
 import { UiModule } from '@wka/ui';
 describe('HomeComponent', () => {
   let component: QuickBarComponent;
@@ -11,7 +11,7 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [QuickBarComponent],
       imports: [HttpClientTestingModule, UiModule],
-      providers: [QuickBarService],
+      providers: [AppsService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(QuickBarComponent);

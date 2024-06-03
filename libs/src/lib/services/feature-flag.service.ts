@@ -1,13 +1,13 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FeatureFlagsService {
-  private featureFlags$ = new BehaviorSubject<any>({});
+  private featureFlags$ = new Subject<any>();
 
   constructor(
     private httpClient: HttpClient,
@@ -22,7 +22,7 @@ export class FeatureFlagsService {
       .subscribe((flags) => this.featureFlags$.next(flags));
   }
 
-  isFeatureEnabled(featureName: string): Observable<boolean> {
+  isFeatureEnabled$(featureName: string): Observable<boolean> {
     return this.featureFlags$.pipe(map((flags) => flags[featureName] === true));
   }
 }

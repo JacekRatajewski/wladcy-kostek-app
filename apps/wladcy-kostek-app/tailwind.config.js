@@ -12,10 +12,12 @@ module.exports = {
       gridTemplateRows: {
         header: '135px auto',
         sidebar: 'repeat(auto-fill, 100px)',
+        news: 'repeat(auto-fill, 208px)',
       },
       gridTemplateColumns: {
         sidebar: '105px auto',
         quickbar: 'auto 600px',
+        error: '30% 60%',
       },
       width: {
         quickbar: 'calc(100% - 3rem)',

@@ -5,12 +5,12 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { QuickBarComponent } from './components/quick-bar/quick-bar.component';
 import { UiModule } from '@wka/ui';
-import { QuickBarService } from './services/quick-bar.service';
+import { AppsService } from './services/apps.service';
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes), UiModule],
   exports: [RouterModule],
   declarations: [HomeComponent, QuickBarComponent],
-  providers: [provideRouter(routes), QuickBarService],
+  providers: [provideRouter(routes), AppsService],
 })
 export class HomeModule {}

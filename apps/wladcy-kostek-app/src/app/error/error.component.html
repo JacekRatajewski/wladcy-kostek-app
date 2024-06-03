@@ -1,10 +1,20 @@
-<div class="absolute w-full h-full bg-background z-20">
-    <div class="absolute z-30 top-40 left-44 font-header text-7xl">{{ errorCode }}</div>
-    <div class="absolute z-30 top-60 left-44 font-header text-4xl">{{ getErrorMessage() }}</div>
-    <wka-ui-button class="absolute z-30 top-80 left-44" [onClick]="goHome.bind(this)">Powrót</wka-ui-button>
+<div class="absolute w-full h-full bg-background z-50 grid grid-cols-error">
+  <div class="flex flex-col lg:p-36 p-12 absolute z-40">
+    <div class="font-header text-7xl mb-8 relative">
+      {{ errorCode }}
+    </div>
     <div
-      #diceContainer
-      id="diceContainer"
-      class="absolute left-1/4 top-0 z-20 w-3/4 h-full"
-    ></div>
+      class="font-header text-4xl text-ellipsis w-full overflow-hidden text-nowrap mb-4"
+    >
+      {{ getErrorMessage() }}
+    </div>
+    <wka-ui-button class="mb-4" [onClick]="goHome.bind(this)"
+      >Powrót</wka-ui-button
+    >
+  </div>
+  <div
+    #diceContainer
+    id="diceContainer"
+    class="absolute left-1/4 top-0 z-20 w-3/4 h-full"
+  ></div>
 </div>

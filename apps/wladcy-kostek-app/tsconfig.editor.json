@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts", "src/shared/external/dice.scripts.js", "src/mock/handlers/latestApps.js", "src/mock/handlers/index.js", "src/mock/config.js"],
+  "include": ["src/**/*.ts", "src/**/*.js"],
   "compilerOptions": {},
   "exclude": ["jest.config.ts", "src/**/*.test.ts", "src/**/*.spec.ts"]
 }

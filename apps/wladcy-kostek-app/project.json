@@ -7,11 +7,14 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
+        "customWebpackConfig": {
+          "path": "apps/wladcy-kostek-app/webpack.config.js"
+        },
         "outputPath": "dist/apps/wladcy-kostek-app",
         "index": "apps/wladcy-kostek-app/src/index.html",
         "main": "apps/wladcy-kostek-app/src/main.ts",
@@ -62,7 +65,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "wladcy-kostek-app:build:production"
@@ -74,7 +77,7 @@
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@nx/angular:extract-i18n",
       "options": {
         "buildTarget": "wladcy-kostek-app:build"
       }

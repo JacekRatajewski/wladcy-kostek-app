@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
 import { QuickBarComponent } from '../quick-bar/quick-bar.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { QuickBarService } from '../../services/quick-bar.service';
+import { AppsService } from '../../services/apps.service';
 import { FeatureFlagsService, UiModule } from '@wka/ui';
 
 describe('HomeComponent', () => {
@@ -14,7 +14,7 @@ describe('HomeComponent', () => {
       declarations: [HomeComponent, QuickBarComponent],
       imports: [HttpClientTestingModule, UiModule],
       providers: [
-        QuickBarService,
+        AppsService,
         {
           provide: 'featureFlagPath',
           useValue: 'assets/json/feature-flags.json',

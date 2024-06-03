@@ -1,0 +1,30 @@
+@media (width >=1024px) {
+    .wka-news-container {
+        grid-template-areas:
+            "BigNews BigNews ."
+            "BigNews BigNews ."
+            ". . .";
+    }
+
+    .wka-big-news {
+        grid-area: BigNews;
+    }
+
+}
+
+.wka-news {
+    &:hover {
+        animation: pop-up forwards 100ms ease-in;
+    }
+}
+
+
+@keyframes pop-up {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}

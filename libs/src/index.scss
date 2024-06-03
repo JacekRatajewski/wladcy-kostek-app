@@ -3,4 +3,6 @@
 @tailwind utilities;
 @import './styles/themes';
 @import './styles/core/overlay';
+@import './styles/core/scrollbar';
+@import './styles/core/spinner';
 @import './lib/directives/tooltip/tooltip.directive';

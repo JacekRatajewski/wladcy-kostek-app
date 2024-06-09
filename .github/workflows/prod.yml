@@ -55,7 +55,7 @@ jobs:
           path: dist/apps
   deploy_butler:
     name: Deploy Rpg Butler
-    needs: build
+    needs: build_butler
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4.1.7

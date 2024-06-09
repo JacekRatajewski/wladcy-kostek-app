@@ -16,6 +16,18 @@
         "main": "apps/rpg-butler/src/main.ts",
         "tsConfig": "apps/rpg-butler/tsconfig.app.json",
         "generatePackageJson": true,
+        "assets": [
+          {
+            "glob": "config.ts",
+            "input": "apps/rpg-butler/src/assets/",
+            "output": "./apps/rpg-butler/src/assets/"
+          },
+          {
+            "glob": "cards.ts",
+            "input": "apps/rpg-butler/src/assets/",
+            "output": "./apps/rpg-butler/src/assets/"
+          }
+        ],
         "esbuildOptions": {
           "sourcemap": true,
           "outExtension": {
@@ -31,6 +43,11 @@
               "glob": "config.ts",
               "input": "apps/rpg-butler/src/assets/",
               "output": "./apps/rpg-butler/src/assets/"
+            },
+            {
+              "glob": "cards.ts",
+              "input": "apps/rpg-butler/src/assets/",
+              "output": "./apps/rpg-butler/src/assets/"
             }
           ],
           "esbuildOptions": {
@@ -38,7 +55,19 @@
             "outExtension": {
               ".js": ".js",
               ".ts": ".ts"
-            }
+            },
+            "assets": [
+              {
+                "glob": "config.ts",
+                "input": "apps/rpg-butler/src/assets/",
+                "output": "./apps/rpg-butler/src/assets/"
+              },
+              {
+                "glob": "cards.ts",
+                "input": "apps/rpg-butler/src/assets/",
+                "output": "./apps/rpg-butler/src/assets/"
+              }
+            ]
           }
         },
         "production": {

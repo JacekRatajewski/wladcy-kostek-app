@@ -1,0 +1,9 @@
+<div class="w-full h-full grid grid-cols-1 grid-rows-newsContainer">
+  <div
+    class="w-full h-full bg-tertiary text-text font-header text-4xl flex items-center pl-8"
+  >
+    Nowości ze świata papierowych RPG
+  </div>
+  <wka-news-list [items$]="news$.asObservable()"></wka-news-list>
+</div>
+<wka-ui-spinner></wka-ui-spinner>

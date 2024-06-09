@@ -1,10 +1,10 @@
 <button
-  class="relative outline-none text-text font-text rounded-full pt-1 pb-1 pr-4 pl-4 hover:bg-opacity-80"
+  class="wkaButton relative outline-none text-text font-text rounded-full pt-1 pb-1 pr-4 pl-4"
   [class.bg-primary]="color === ButtonColors.primary"
   [class.bg-secondary]="color === ButtonColors.secondary"
   [class.bg-error]="color === ButtonColors.error"
-  (click)="onClick($event)"
+  (click)="onClick($event); href && openLink()"
   type="button"
 >
-  <ng-content></ng-content>
+  <span class="relative w-full h-full flex items-center justify-center z-40"><ng-content></ng-content></span>
 </button>

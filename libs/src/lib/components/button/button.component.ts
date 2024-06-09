@@ -9,9 +9,15 @@ import { ButtonColors } from './models/colors.model';
 export class ButtonComponent {
   @Input() class!: string;
   @Input() color = ButtonColors.primary;
+  @Input() href!: string;
   @Input() public onClick = (event: any) => {
     this.click.emit(event);
   };
   @Output() click: EventEmitter<any> = new EventEmitter();
   public ButtonColors = ButtonColors;
+  public openLink() {
+    if (typeof window !== 'undefined' && window) {
+      (window as any).open(this.href, '_blank').focus();
+    }
+  }
 }

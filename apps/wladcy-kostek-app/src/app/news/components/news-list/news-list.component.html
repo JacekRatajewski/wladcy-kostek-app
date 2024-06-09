@@ -1,0 +1,25 @@
+<div>
+  <wka-ui-virtual-list [length]="news.length">
+    <div
+      [id]="'newsItem' + i"
+      *cdkVirtualFor="let item of news; let i = index; templateCacheSize: 0"
+      class="h-52 w-5/6 flex p-4 gap-4"
+    >
+      <div
+        class="min-w-96 m-h-52 rounded-lg bg-center bg-cover"
+        [ngStyle]="{
+          backgroundImage: 'url(' + item.imageUrl + ')'
+        }"
+      ></div>
+      <div class="flex flex-col justify-between gap-4">
+        <div class="font-header text-2xl">
+          {{ item.title.substring(0, 60) + '...' }}
+        </div>
+        <div class="font-header text-base">
+          {{ item.description.substring(0, 300) + '...' }}
+        </div>
+        <wka-ui-button [href]="item.imageUrl">Przeczytaj cały</wka-ui-button>
+      </div>
+    </div>
+  </wka-ui-virtual-list>
+</div>

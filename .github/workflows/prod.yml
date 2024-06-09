@@ -4,7 +4,7 @@ on:
     - master
 jobs:
   build:
-    name: Build Web App
+    name: Build Apps
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,52 +16,19 @@ jobs:
           cache: 'npm'
       - run: npm i
       - run: npx nx run wladcy-kostek-app:build --configuration=production
+      - run: npx nx run rpg-butler:build --configuration=production
       - uses: actions/upload-artifact@v4.3.3
         with:
           name: dist
           path: dist/apps
   deploy:
-    name: Deploy Web App
+    name: Deploy Apps
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4.1.7
         with:
           name: dist
-          path: .
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: 20.82.145.167
-          port: 21
-          username: ${{ secrets.ftp_acc }}
-          password: ${{ secrets.ftp_password }}
-  build_butler:
-    name: Build Rpg Butler
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '20.11.1'
-          cache: 'npm'
-      - run: npm i
-      - run: npx nx run rpg-butler:build --configuration=production
-      - uses: actions/upload-artifact@v4.3.3
-        with:
-          name: butler
-          path: dist/apps
-  deploy_butler:
-    name: Deploy Rpg Butler
-    needs: build_butler
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4.1.7
-        with:
-          name: butler
           path: .
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

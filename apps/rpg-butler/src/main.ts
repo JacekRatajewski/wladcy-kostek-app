@@ -15,21 +15,25 @@ import { RollService } from './commands/roll';
 const rollCommand = new SlashCommandBuilder()
   .setName('roll')
   .setDescription('Rzuć kością!');
-rollCommand.addStringOption((option) =>
-  option
-    .setName('dice')
-    .setDescription('Wybierz kostkę!')
-    .setRequired(true)
-    .setChoices(
-      { name: 'd4', value: '1d4' },
-      { name: 'd6', value: '1d6' },
-      { name: 'd8', value: '1d8' },
-      { name: 'd10', value: '1d10' },
-      { name: 'd12', value: '1d12' },
-      { name: 'd20', value: '1d20' },
-      { name: 'd100', value: '1d100' }
-    )
-);
+rollCommand
+  .addStringOption((option) =>
+    option.setName('count').setDescription('Ile kości?')
+  )
+  .addStringOption((option) =>
+    option
+      .setName('dice')
+      .setDescription('Wybierz kostkę!')
+      .setRequired(true)
+      .setChoices(
+        { name: 'd4', value: '1d4' },
+        { name: 'd6', value: '1d6' },
+        { name: 'd8', value: '1d8' },
+        { name: 'd10', value: '1d10' },
+        { name: 'd12', value: '1d12' },
+        { name: 'd20', value: '1d20' },
+        { name: 'd100', value: '1d100' }
+      )
+  );
 
 const carCommand = new SlashCommandBuilder()
   .setName('card')
@@ -82,8 +86,14 @@ client.on('interactionCreate', async (interaction) => {
   }
 
   if (interaction.commandName === 'roll') {
-    const roll = interaction.options.getString('dice');
-    const rs = new RollService(roll);
+    const dice = interaction.options.getString('dice');
+    const count = interaction.options.getString('count');
+    let rs;
+    if (count) {
+      rs = new RollService(`${count}${dice}`);
+    } else {
+      rs = new RollService(`${dice}`);
+    }
     const res = rs.roll();
     const emededRolls = [];
     for (let index = 0; index < res.length; index++) {
@@ -99,10 +109,9 @@ client.on('interactionCreate', async (interaction) => {
     });
   }
 
-  await interaction
-    .reply({
-      content: `...`,
-    })
+  await interaction.reply({
+    content: `...`,
+  });
 
   await setTimeout(() => {
     interaction.deleteReply();

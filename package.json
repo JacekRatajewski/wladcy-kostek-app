@@ -6,7 +6,7 @@
     "ngsw": "npx nx run wladcy-kostek-app:build --configuration=production && npx http-server -p 8080 -c-1 dist/apps/wladcy-kostek-app",
     "apk": "cd ./android && bubblewrap build",
     "start": "npx nx run wladcy-kostek-app:serve --configuration=development",
-    "butler": "npx nx run rpg-butler:serve --configuration=development",
+    "butler": "npx nx run rpg-butler:serve --configuration=production",
     "prepare": "husky"
   },
   "private": true,

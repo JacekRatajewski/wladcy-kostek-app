@@ -17,9 +17,6 @@ const rollCommand = new SlashCommandBuilder()
   .setDescription('Rzuć kością!');
 rollCommand
   .addStringOption((option) =>
-    option.setName('count').setDescription('Ile kości?')
-  )
-  .addStringOption((option) =>
     option
       .setName('dice')
       .setDescription('Wybierz kostkę!')
@@ -33,6 +30,9 @@ rollCommand
         { name: 'd20', value: '1d20' },
         { name: 'd100', value: '1d100' }
       )
+  )
+  .addNumberOption((option) =>
+    option.setName('count').setDescription('Ile kości?').setRequired(false)
   );
 
 const carCommand = new SlashCommandBuilder()
@@ -87,10 +87,10 @@ client.on('interactionCreate', async (interaction) => {
 
   if (interaction.commandName === 'roll') {
     const dice = interaction.options.getString('dice');
-    const count = interaction.options.getString('count');
+    const count = interaction.options.getNumber('count');
     let rs;
     if (count) {
-      rs = new RollService(`${count}${dice}`);
+      rs = new RollService(`${count}d${dice.split('d')[1]}`);
     } else {
       rs = new RollService(`${dice}`);
     }

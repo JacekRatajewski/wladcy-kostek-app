@@ -38,6 +38,7 @@ jobs:
           password: ${{ secrets.ftp_password }}
   build_butler:
     name: Build Rpg Butler
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

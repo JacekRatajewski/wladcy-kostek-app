@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '20.11.1'
           cache: 'npm'
-      - run: npm ci
+      - run: npm i
       - run: npx nx run wladcy-kostek-app:build --configuration=production
       - uses: actions/upload-artifact@v4.3.3
         with:
@@ -47,7 +47,7 @@ jobs:
         with:
           node-version: '20.11.1'
           cache: 'npm'
-      - run: npm ci
+      - run: npm i
       - run: npx nx run rpg-butler:build --configuration=production
       - uses: actions/upload-artifact@v4.3.3
         with:

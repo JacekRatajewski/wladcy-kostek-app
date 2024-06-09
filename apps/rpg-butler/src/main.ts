@@ -88,7 +88,7 @@ client.on('interactionCreate', async (interaction) => {
   if (interaction.commandName === 'roll') {
     const dice = interaction.options.getString('dice');
     const count = interaction.options.getNumber('count');
-    let rs;
+    let rs: RollService;
     if (count) {
       rs = new RollService(`${count}d${dice.split('d')[1]}`);
     } else {
@@ -96,14 +96,13 @@ client.on('interactionCreate', async (interaction) => {
     }
     const res = rs.roll();
     const emededRolls = [];
-    for (let index = 0; index < res.length; index++) {
-      const roll = res[index];
-      const embededRoll = new EmbedBuilder().setTitle(
-        `${interaction.guild.emojis.cache.first()} Rolled: ${roll}`
-      );
-      embededRoll.setColor(0xff7a00);
-      emededRolls.push(embededRoll);
-    }
+    const embededRoll = new EmbedBuilder().setTitle(
+      `${interaction.guild.emojis.cache.first()} Rolled: ${
+        res.length > 1 ? res.join(',') : res[0]
+      }`
+    );
+    embededRoll.setColor(0xff7a00);
+    emededRolls.push(embededRoll);
     emededRolls.forEach(async (roll) => {
       await interaction.channel.send({ embeds: [roll] });
     });

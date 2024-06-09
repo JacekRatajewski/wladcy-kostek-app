@@ -1,0 +1,23 @@
+@import '@wka/ui/src/index';
+
+.wkaButton {
+    position: relative;
+    transition: all 1s;
+
+    &:hover::after {
+        content: '\A';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: $overlay2;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+
+
+    &.wkaButton::after {
+        opacity: 0;
+    }
+}

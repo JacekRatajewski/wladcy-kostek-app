@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { FeatureFlagsService, SpinnerComponent, spinner } from '@wka/ui';
 import { FeatureFlags } from '../../../../shared/models/feature-flags.model';
-import { AppsService } from '../../services/apps.service';
-import { News } from '../../services/models/news.model';
-import { NewsService } from '../../services/news.service';
+import { News } from '../../../../shared/models/news.model';
+import { NewsService } from '../../../../shared/services/news.service';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'wka-home',

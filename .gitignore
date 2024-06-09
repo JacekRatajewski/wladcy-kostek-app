@@ -48,3 +48,8 @@ Thumbs.db
 
 .nx/cache
 .angular
+
+
+# json configs
+apps/rpg-butler/src/assets/config.ts
+apps/rpg-butler/src/assets/cards.ts

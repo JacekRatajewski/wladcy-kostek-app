@@ -1,0 +1,72 @@
+{
+  "name": "rpg-butler",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/rpg-butler/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "platform": "node",
+        "outputPath": "dist/apps/rpg-butler",
+        "format": ["cjs"],
+        "bundle": false,
+        "main": "apps/rpg-butler/src/main.ts",
+        "tsConfig": "apps/rpg-butler/tsconfig.app.json",
+        "generatePackageJson": true,
+        "esbuildOptions": {
+          "sourcemap": true,
+          "outExtension": {
+            ".js": ".js",
+            ".ts": ".ts"
+          }
+        }
+      },
+      "configurations": {
+        "development": {
+          "assets": [
+            {
+              "glob": "config.ts",
+              "input": "apps/rpg-butler/src/assets/",
+              "output": "./apps/rpg-butler/src/assets/"
+            }
+          ],
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js",
+              ".ts": ".ts"
+            }
+          }
+        },
+        "production": {
+          "esbuildOptions": {
+            "sourcemap": false,
+            "outExtension": {
+              ".js": ".js",
+              ".ts": ".ts"
+            }
+          }
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "rpg-butler:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "rpg-butler:build:development"
+        },
+        "production": {
+          "buildTarget": "rpg-butler:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

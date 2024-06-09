@@ -10,6 +10,7 @@ import { UiModule } from '@wka/ui';
 import { provideServiceWorker } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
+import { NewsModule } from './news/news.module';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { ErrorComponent } from './error/error.component';
     UiModule,
     LayoutModule,
     HomeModule,
+    NewsModule
   ],
   providers: [
     importProvidersFrom(HttpClientModule),

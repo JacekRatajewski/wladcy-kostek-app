@@ -9,8 +9,11 @@ export const appRoutes: Route[] = [
     children: [
       {
         path: '',
-        pathMatch: 'full',
         loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'news',
+        loadChildren: () => import('./news/news.module').then((m) => m.NewsModule),
       },
     ],
   },

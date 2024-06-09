@@ -17,6 +17,8 @@ import { ThemePickerComponent } from './components/theme-picker/theme-picker.com
 import { ThemeService } from './services/theme.service';
 import { SliderComponent } from './components/slider/slider.component';
 import { RadioComponent } from './components/radio/radio.component';
+import { VirtualListComponent } from './components/virtual-list/virtual-list.component';
+import { CdkVirtualScrollViewport, ScrollingModule } from '@angular/cdk/scrolling';
 
 const components = [
   IconComponent,
@@ -26,8 +28,10 @@ const components = [
   DialogComponent,
   ThemePickerComponent,
   SliderComponent,
-  RadioComponent
+  RadioComponent,
+  VirtualListComponent
 ];
+const modules = [CommonModule, ScrollingModule]
 const services = [LoaderService, FeatureFlagsService, ThemeService];
 const directives = [TooltipDirective, VarDirective];
 const providers = [
@@ -40,11 +44,12 @@ const providers = [
     useClass: LoaderInterceptor,
     multi: true,
   },
+  CdkVirtualScrollViewport
 ];
 @NgModule({
-  imports: [CommonModule],
-  exports: [...components, ...directives],
-  declarations: [...components, ...directives],
+  imports: [...modules],
+  exports: [...components, ...directives, ...modules],
+  declarations: [...components, ...directives ],
   providers: [...services, ...providers],
 })
 export class UiModule {}

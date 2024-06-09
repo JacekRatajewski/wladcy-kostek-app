@@ -13,6 +13,7 @@ module.exports = {
         header: '135px auto',
         sidebar: 'repeat(auto-fill, 100px)',
         news: 'repeat(auto-fill, 208px)',
+        newsContainer: '155px auto',
       },
       gridTemplateColumns: {
         sidebar: '105px auto',

@@ -1,5 +1,11 @@
 <div>
-  <wka-ui-virtual-list [length]="news.length">
+  <cdk-virtual-scroll-viewport
+    class="w-full h-4/5 absolute"
+    itemSize="{{ news.length || 50 }}"
+    minBufferPx="208"
+    maxBufferPx="784"
+    appendOnly
+  >
     <div
       [id]="'newsItem' + i"
       *cdkVirtualFor="let item of news; let i = index; templateCacheSize: 0"
@@ -18,8 +24,8 @@
         <div class="font-header text-base">
           {{ item.description.substring(0, 300) + '...' }}
         </div>
-        <wka-ui-button [href]="item.imageUrl">Przeczytaj cały</wka-ui-button>
+        <wka-ui-button [href]="item.url">Przeczytaj cały</wka-ui-button>
       </div>
     </div>
-  </wka-ui-virtual-list>
+  </cdk-virtual-scroll-viewport>
 </div>

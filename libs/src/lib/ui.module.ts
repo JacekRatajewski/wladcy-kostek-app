@@ -17,7 +17,6 @@ import { ThemePickerComponent } from './components/theme-picker/theme-picker.com
 import { ThemeService } from './services/theme.service';
 import { SliderComponent } from './components/slider/slider.component';
 import { RadioComponent } from './components/radio/radio.component';
-import { VirtualListComponent } from './components/virtual-list/virtual-list.component';
 import { CdkVirtualScrollViewport, ScrollingModule } from '@angular/cdk/scrolling';
 
 const components = [
@@ -28,8 +27,7 @@ const components = [
   DialogComponent,
   ThemePickerComponent,
   SliderComponent,
-  RadioComponent,
-  VirtualListComponent
+  RadioComponent
 ];
 const modules = [CommonModule, ScrollingModule]
 const services = [LoaderService, FeatureFlagsService, ThemeService];

@@ -8,7 +8,6 @@ export * from './lib/components/dialog/dialog.component';
 export * from './lib/components/theme-picker/theme-picker.component';
 export * from './lib/components/slider/slider.component';
 export * from './lib/components/radio/radio.component';
-export * from './lib/components/virtual-list/virtual-list.component';
 // DIRECTIVES
 export * from './lib/directives/tooltip/tooltip.directive';
 export * from './lib/directives/var/var.directive';

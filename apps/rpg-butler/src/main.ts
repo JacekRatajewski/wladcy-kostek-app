@@ -10,36 +10,12 @@ import {
   SlashCommandBuilder,
   SlashCommandRoleOption,
 } from 'discord.js';
-import { RollService } from './commands/roll';
+import { RollService, rollCommand } from './commands/roll';
+import { commands as cardCommands } from './commands/cards';
 
-const rollCommand = new SlashCommandBuilder()
-  .setName('roll')
-  .setDescription('Rzuć kością!');
-rollCommand
-  .addStringOption((option) =>
-    option
-      .setName('dice')
-      .setDescription('Wybierz kostkę!')
-      .setRequired(true)
-      .setChoices(
-        { name: 'd4', value: '1d4' },
-        { name: 'd6', value: '1d6' },
-        { name: 'd8', value: '1d8' },
-        { name: 'd10', value: '1d10' },
-        { name: 'd12', value: '1d12' },
-        { name: 'd20', value: '1d20' },
-        { name: 'd100', value: '1d100' }
-      )
-  )
-  .addNumberOption((option) =>
-    option.setName('count').setDescription('Ile kości?').setRequired(false)
-  );
+let cached_cards = [...cards];
 
-const carCommand = new SlashCommandBuilder()
-  .setName('card')
-  .setDescription('Losowa Karta do licytacji!');
-
-const commands = [rollCommand, carCommand];
+const commands = [rollCommand, ...cardCommands];
 
 const rest = new REST({ version: '10' }).setToken(config.DISCORD_TOKEN);
 
@@ -67,13 +43,27 @@ client.on('ready', () => {
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
+  if (interaction.commandName === 'add_card') {
+    const cardName = interaction.options.getString('card');
+    const _card = cards.find((card) => card.name === cardName);
+    cached_cards.push(_card);
+  }
+
+  if (interaction.commandName === 'reset_cards') {
+    cached_cards = [...cards];
+  }
+
   if (interaction.commandName === 'card') {
-    const result = new RollService(`1d${cards.length}`).roll()[0];
-    const card = cards[result + 1];
+    const result = new RollService(`1d${cached_cards.length}`).roll()[0];
+    const card = cached_cards.splice(result + 1, 1)[0];
     const embededCard = new EmbedBuilder()
       .setTitle(`${card.name}`)
       .setDescription(card.description);
-    if (card.additionalRoll && card.additionalRollModifier) {
+    if (
+      card.additionalRoll &&
+      (card.additionalRollModifier === true ||
+        card.additionalRollModifier === false)
+    ) {
       const result = new RollService(`${card.additionalRoll}`).roll()[0];
       embededCard.setFooter({
         text: `PUNKTY OSKAROWE: ${
@@ -88,19 +78,22 @@ client.on('interactionCreate', async (interaction) => {
   if (interaction.commandName === 'roll') {
     const dice = interaction.options.getString('dice');
     const count = interaction.options.getNumber('count');
-    let rs: RollService;
-    if (count) {
-      rs = new RollService(`${count}d${dice.split('d')[1]}`);
-    } else {
-      rs = new RollService(`${dice}`);
-    }
+    const rollFormula = count ? `${count}d${dice.split('d')[1]}` : `${dice}`;
+    const rs = new RollService(rollFormula);
+    console.log(interaction);
     const res = rs.roll();
     const emededRolls = [];
-    const embededRoll = new EmbedBuilder().setTitle(
-      `${interaction.guild.emojis.cache.first()} Rolled: ${
-        res.length > 1 ? res.join(',') : res[0]
-      }`
-    );
+    const embededRoll = new EmbedBuilder()
+      .setTitle(
+        `${interaction.guild.emojis.cache.first()} Rolled: ${
+          res.length > 1 ? res.join(',') : res[0]
+        }`
+      )
+      .setAuthor({
+        name: interaction.user.globalName,
+        iconURL: interaction.user.avatarURL(),
+      })
+      .setFooter({ text: `Rolling: ${rollFormula}` });
     embededRoll.setColor(0xff7a00);
     emededRolls.push(embededRoll);
     emededRolls.forEach(async (roll) => {

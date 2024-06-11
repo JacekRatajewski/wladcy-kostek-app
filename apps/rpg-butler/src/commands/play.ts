@@ -18,4 +18,8 @@ export const playCommand = new SlashCommandBuilder()
       .addStringOption((option) =>
         option.setName('url').setDescription('Podaj url.').setRequired(true)
       )
+  ).addSubcommand((subcommand) =>
+    subcommand
+      .setName('end')
+      .setDescription('Zatrzymaj odtwarzanie i wyrzuć bota!')
   );

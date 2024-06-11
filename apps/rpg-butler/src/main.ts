@@ -226,6 +226,10 @@ client.on('interactionCreate', async (interaction) => {
             .on(AudioPlayerStatus.Idle, playFromPlaylist(songs));
           playFromPlaylist(songs).call(this);
         });
+      } else if(interaction.options.getSubcommand() === 'end') {
+        if (csub) csub.unsubscribe();
+        player.off(AudioPlayerStatus.Idle, playFromPlaylist([]));
+        voiceConnection.destroy();
       }
     } else {
       await interaction.reply({

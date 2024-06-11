@@ -20,7 +20,8 @@
           "sourcemap": true,
           "outExtension": {
             ".js": ".js",
-            ".ts": ".ts"
+            ".ts": ".ts",
+            ".exe": ".exe"
           }
         }
       },
@@ -28,13 +29,13 @@
         "development": {
           "assets": [
             {
-              "glob": "config.ts",
-              "input": "apps/rpg-butler/src/assets/",
+              "glob": "config.json",
+              "input": "./apps/rpg-butler/src/assets/",
               "output": "./apps/rpg-butler/src/assets/"
             },
             {
-              "glob": "cards.ts",
-              "input": "apps/rpg-butler/src/assets/",
+              "glob": "cards.json",
+              "input": "./apps/rpg-butler/src/assets/",
               "output": "./apps/rpg-butler/src/assets/"
             }
           ],
@@ -42,20 +43,9 @@
             "sourcemap": false,
             "outExtension": {
               ".js": ".js",
-              ".ts": ".ts"
-            },
-            "assets": [
-              {
-                "glob": "config.ts",
-                "input": "apps/rpg-butler/src/assets/",
-                "output": "./apps/rpg-butler/src/assets/"
-              },
-              {
-                "glob": "cards.ts",
-                "input": "apps/rpg-butler/src/assets/",
-                "output": "./apps/rpg-butler/src/assets/"
-              }
-            ]
+              ".ts": ".ts",
+              ".exe": ".exe"
+            }
           }
         },
         "production": {

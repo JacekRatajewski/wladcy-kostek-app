@@ -1,7 +1,7 @@
 // @ts-ignore: Enviroment files
-import cards from './assets/cards.json';
+import cards from 'C:/envs/cards.json';
 // @ts-ignore: Enviroment files
-import config from './assets/config.json';
+import config from 'C:/envs/config.json';
 
 import {
   ChannelType,
@@ -28,7 +28,7 @@ import {
 import ytdl, { getBasicInfo, getInfo } from 'ytdl-core';
 import ytpl from 'ytpl';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
-const cachedCards$ = new BehaviorSubject([...cards]);
+const cachedCards$ = new BehaviorSubject([...cards.cards]);
 
 const commands = [playCommand, rollCommand, ...cardCommands];
 
@@ -111,14 +111,14 @@ client.on('interactionCreate', async (interaction) => {
 
   if (interaction.commandName === 'add_card') {
     const cardName = interaction.options.getString('card');
-    const _card = cards.find((card) => card.name === cardName);
+    const _card = cards.cards.find((card) => card.name === cardName);
     const cached_cards = [...cachedCards$.value];
     cached_cards.push(_card);
     cachedCards$.next(cached_cards);
   }
 
   if (interaction.commandName === 'reset_cards') {
-    cachedCards$.next([...cards]);
+    cachedCards$.next([...cards.cards]);
   }
 
   if (interaction.commandName === 'card') {

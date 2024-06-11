@@ -1,6 +1,6 @@
 import { SlashCommandBuilder } from 'discord.js'
 // @ts-ignore: Enviroment files;
-import cards from '../assets/cards.json';
+import cards from 'C:/envs/cards.json';
 
 const cardCommand = new SlashCommandBuilder()
   .setName('card')
@@ -19,7 +19,7 @@ const addCardCommand = new SlashCommandBuilder()
       .setDescription('Przywróć kartę do puli losowania!')
       .setRequired(true)
       .setChoices(
-        ...cards.map((card) => {
+        ...cards.cards.map((card) => {
           return {
             name: card.name,
             value: card.name,

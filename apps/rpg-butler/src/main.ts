@@ -1,4 +1,6 @@
+// @ts-ignore: Enviroment files
 import cards from './assets/cards.json';
+// @ts-ignore: Enviroment files
 import config from './assets/config.json';
 
 import {

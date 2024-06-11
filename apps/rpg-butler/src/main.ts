@@ -2,7 +2,7 @@
 import cards from 'C:/envs/cards.json';
 // @ts-ignore: Enviroment files
 import config from 'C:/envs/config.json';
-
+import * as libsodium from 'libsodium-wrappers';
 import {
   ChannelType,
   Client,

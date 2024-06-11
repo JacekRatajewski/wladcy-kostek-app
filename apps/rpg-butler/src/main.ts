@@ -211,6 +211,8 @@ client.on('interactionCreate', async (interaction) => {
         );
       }
       if (interaction.options.getSubcommand() === 'song') {
+        if (csub) csub.unsubscribe();
+        player.off(AudioPlayerStatus.Idle, playFromPlaylist([]));
         await playSong(url, interaction);
       } else if (interaction.options.getSubcommand() === 'playlist') {
         if (csub) csub.unsubscribe();

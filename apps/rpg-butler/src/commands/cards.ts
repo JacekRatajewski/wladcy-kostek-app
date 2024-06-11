@@ -1,4 +1,5 @@
-import { SlashCommandBuilder } from 'discord.js';
+import { SlashCommandBuilder } from 'discord.js'
+// @ts-ignore: Enviroment files;
 import cards from '../assets/cards.json';
 
 const cardCommand = new SlashCommandBuilder()

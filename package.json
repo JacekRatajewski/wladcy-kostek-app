@@ -6,10 +6,14 @@
     "ngsw": "npx nx run wladcy-kostek-app:build --configuration=production && npx http-server -p 8080 -c-1 dist/apps/wladcy-kostek-app",
     "apk": "cd ./android && bubblewrap build",
     "start": "npx nx run wladcy-kostek-app:serve --configuration=development",
-    "butler": "npx nx run rpg-butler:serve --configuration=production",
     "prepare": "husky"
   },
   "private": true,
+  "overrides": {
+    "@discordjs/builders": {
+      "@sapphire/shapeshift": "^3.6.0"
+    }
+  },
   "dependencies": {
     "@3d-dice/dice-box": "^1.0.12",
     "@angular/animations": "~17.1.0",
@@ -21,17 +25,26 @@
     "@angular/platform-browser-dynamic": "~17.1.0",
     "@angular/router": "~17.1.0",
     "@angular/service-worker": "~17.1.0",
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/voice": "^0.17.0",
     "@nrwl/node": "^19.2.2",
     "@nx/angular": "18.0.8",
+    "@sapphire/shapeshift": "^4.0.0",
     "@wka/ui": "file:libs",
     "axios": "^1.6.0",
     "discord-interactions": "^3.2.0",
+    "discord-music-player": "^9.1.1",
     "discord.js": "^14.15.3",
     "dotenv": "^16.0.3",
     "express": "^4.19.2",
+    "ffmpeg-static": "^5.2.0",
+    "libsodium-wrappers": "^0.7.13",
     "node-fetch": "^3.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "youtube-dl-exec": "^3.0.2",
+    "ytdl-core": "^4.11.5",
+    "ytpl": "^2.3.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

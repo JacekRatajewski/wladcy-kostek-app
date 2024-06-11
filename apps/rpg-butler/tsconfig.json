@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
+  "include": ["./src/assets/cards.json", "./src/assets/config.json"],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -13,6 +13,6 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "module": "es2022",
+    "module": "es2022"
   }
 }

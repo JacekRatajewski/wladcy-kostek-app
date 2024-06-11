@@ -1,5 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
-import { cards } from '../assets/cards';
+import cards from '../assets/cards.json';
 
 const cardCommand = new SlashCommandBuilder()
   .setName('card')

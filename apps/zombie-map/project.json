@@ -7,11 +7,14 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": [
         "{options.outputPath}"
       ],
       "options": {
+        "customWebpackConfig": {
+          "path": "apps/zombie-map/webpack.config.js"
+        },
         "outputPath": "dist/apps/zombie-map",
         "index": "apps/zombie-map/src/index.html",
         "main": "apps/zombie-map/src/main.ts",
@@ -60,7 +63,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:dev-server",
       "configurations": {
         "production": {
           "buildTarget": "zombie-map:build:production"
@@ -72,7 +75,7 @@
       "defaultConfiguration": "development"
     },
     "extract-i18n": {
-      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "executor": "@nx/angular:extract-i18n",
       "options": {
         "buildTarget": "zombie-map:build"
       }

@@ -35,7 +35,7 @@ export class EventsService {
 
   async getEventDescription(eventName: string): Promise<string | null> {
     const url = 'https://api.openai.com/v1/chat/completions';
-    const apiKey = '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'; // Zamień to na swój klucz API
+    const apiKey = process.env.OPENAIAPI_KEY; // Zamień to na swój klucz API
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');

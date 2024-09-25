@@ -1,0 +1,46 @@
+.bg {
+    background-image: url("https://cdn.midjourney.com/3dfeb4ec-05a2-4c47-bf01-68351d9217cd/0_0.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login,
+.enter {
+    video {
+        position: absolute;
+        bottom: 0;
+        mix-blend-mode: lighten;
+    }
+
+    .login-enter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 10%;
+        z-index: 10;
+    }
+}
+
+.icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+        width: 15rem;
+        transition: all 300ms ease;
+
+        &:hover {
+            transform: scale(1.5);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+#pop-up {
+    max-width: 450px;
+    max-height: 200px;
+    font-size: 1rem;
+    display: none;
+    background-color: #00c200bd;
+    font-family: monospace;
+    padding: 0.5rem 1rem;
+    overflow: auto;
+
+    &.opened {
+        display: block;
+    }
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #111;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #0f0;
+    }
+}

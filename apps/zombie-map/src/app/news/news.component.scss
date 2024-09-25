@@ -1,0 +1,31 @@
+.news-body {
+    background-color: rgb(0 0 0 / 90%);
+}
+
+.news-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% 90%;
+    height: 100%;
+
+    .news-grid-header {
+        border-bottom: 1px solid rgb(255 255 255 / 34%);
+    }
+}
+
+.post {
+    grid-template-rows: 1fr auto;
+    border-bottom: 1px solid rgb(255 255 255 / 34%);
+}
+
+.title {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hash {
+    float: left;
+    padding-right: 0.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}

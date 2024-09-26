@@ -65,7 +65,7 @@ export class MapComponent implements AfterViewInit {
       center: { lat: 53.15142289006538, lng: 16.73766286078557 },
       zoom: 15,
       container: 'zombie-map',
-      style: `https://maps.geoapify.com/v1/styles/dark-matter/style.json?apiKey=f83ffffcc5f9474e96b76429756e7f47`,
+      style: `https://maps.geoapify.com/v1/styles/dark-matter/style.json?apiKey=${process.env.GEOAPI_KEY}`,
     });
 
     (this.popup.nativeElement as HTMLDivElement).onclick = (el) => {

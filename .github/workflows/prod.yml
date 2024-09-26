@@ -17,7 +17,11 @@ jobs:
       - run: npm i
       - run: npx nx run wladcy-kostek-app:build --configuration=production
       - run: npx nx run rpg-butler:build --configuration=production
-      - run: npx nx run zombie-map:build --configuration=production
+      - name: Build zombie-map
+        run: npx nx run zombie-map:build --configuration=production
+        env:
+            OPENAIAPI_KEY: ${{ secrets.openaiapi_key }}
+            GEOAPI_KEY: ${{ secrets.geoapi_key }}
       - uses: actions/upload-artifact@v4.3.3
         with:
           name: dist

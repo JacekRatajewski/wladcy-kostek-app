@@ -17,16 +17,15 @@ export class CountrysideArea implements BaseArea {
     Area.PlaceCountryMajor,
   ];
   events = [
-    'Zombifikowane zwierzęta domowe zaczynają atakować farmę',
-    'Spalone pole kukurydzy skrywa zombie czających się na ofiary',
-    'Mała wioska zostaje odcięta przez hordę',
-    'Podziemne schrony w lesie są pełne zarażonych ocalałych',
-    'Farma zostaje zaatakowana przez noc – ocalałych nie można znaleźć',
-    'Miejscowy kościół staje się miejscem oblężenia przez zombie',
-    'Przydrożna gospoda ukrywa tajemnicze zniknięcia podróżnych',
-    'Mroczny las jest pełen zombie – nikt nie odważy się tam wejść',
-    'Młyn zostaje otoczony przez nieumarłych – mechanizm działa bez przerwy',
-    'Horda przemieszcza się przez otwarte pola – brak schronienia',
-  ];
+    'Przybyliście do małego miasteczka, ale mieszkańcy odmówili wam schronienia – Zainfekowani byli już blisko',
+    'Znaleźliście opuszczoną chatę w lesie, ale okazało się, że w środku są zamknięci Zainfekowani',
+    'Mieszkańcy wsi uwierzyli, że wirus to kara boska – odmówili walki z Zainfekowanymi, chcąc czekać na sąd ostateczny',
+    'Stare gospodarstwo wydawało się bezpieczne, ale dźwięk maszyn rolniczych przyciągnął hordę Zainfekowanych',
+    'Wasz samochód ugrzązł w polnej drodze, a Zainfekowani zbliżali się z lasu – musieliście uciekać pieszo',
+    'Wiejskie gospodarstwo pełne zwierząt przyciągnęło Zainfekowanych – musieliście walczyć o przetrwanie',
+    'Znaleźliście stary młyn na odludziu – w środku były zapasy, ale drzwi do budynku były zamknięte',
+    'Most prowadzący do wsi został zniszczony – musieliście znaleźć inny sposób, by przedostać się na drugą stronę, zanim dotrze horda',
+    'Podczas ucieczki przez pola natknęliście się na grupę ocalałych, którzy byli podejrzliwi wobec was i nie chcieli pomóc',
+];
   name = 'countryside';
 }

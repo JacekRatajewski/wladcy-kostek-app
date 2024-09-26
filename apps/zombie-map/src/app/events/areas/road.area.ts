@@ -15,16 +15,15 @@ export class RoadArea implements BaseArea {
     Area.HighwayNameMotorway,
   ];
   events = [
-    'Ogromny korek blokuje ucieczkę',
-    'Zombie pojawiają się w tunelu, nie ma wyjścia',
-    'Autostrada staje się śmiertelną pułapką – każdy samochód zostaje zaatakowany',
-    'Kolizja konwoju wojskowego z hordą',
-    'Most drogowy jest zniszczony – przejście dalej niemożliwe',
-    'Zombifikowani kierowcy ciężarówek taranują innych',
-    'Blokada dróg przez barykady pełne uchodźców',
-    'Podpalone wraki samochodów blokują trasę ucieczki',
-    'Horda wstrzymuje ruch na autostradzie, blokując możliwość ucieczki',
-    'Ostatnia stacja benzynowa jest oblegana przez zdesperowanych ocalałych'
-  ];
+    'Wasz samochód utknął w korku – za wami Zainfekowani, a przed wami zablokowana droga',
+    'Znaleźliście opuszczony bankowóz, który może zawierać cenne zasoby, ale inni ocalałych już się na niego czają',
+    'Podjeżdżający autobus wpada w panikę i zderza się z innymi pojazdami – musicie szybko się ewakuować',
+    'Pasażer w waszym pojeździe zaczyna wykazywać objawy infekcji – musicie podjąć trudną decyzję',
+    'Kilka porzuconych samochodów blokuje drogę – próbujecie znaleźć sposób, aby się wydostać',
+    'Kierowca samochodu osobowego wpada w szał, próbując rozjechać Zainfekowanych, ryzykując wasze życie',
+    'Ulice miasta są zablokowane – musieliście przebić się przez boczne drogi pełne opuszczonych pojazdów',
+    'Brak paliwa zmusił was do porzucenia auta i poszukiwania schronienia pieszo, podczas gdy Zainfekowani zbliżają się',
+    'Tramwaje zostały opuszczone na środku ulic – musicie manewrować między nimi, unikać Zainfekowanych i szukać alternatywnej trasy',
+];
   name = 'raod';
 }

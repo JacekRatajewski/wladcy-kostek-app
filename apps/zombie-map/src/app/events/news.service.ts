@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ export class NewsService {
 
   constructor() {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5044/newsHub', {
+      .withUrl(`${isDevMode() ? 'http://localhost:5000' : 'http://20.82.145.167:82'}/newsHub`, {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets,
       })

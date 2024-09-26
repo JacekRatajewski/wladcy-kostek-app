@@ -51,7 +51,7 @@ export class EventsService {
         },
         {
           role: 'user',
-          content: `Napisz opis sytuacji: [${eventName}] podczas apokalipsy zombie. Aktualna godzina to: ${hours}:${minutes}:${seconds}`,
+          content: `Wszystko po polsku. Napisz krótki opis sytuacji: [${eventName}] podczas apokalipsy zombie. Aktualna godzina to: ${hours}:${minutes}:${seconds}`,
         },
       ],
     };

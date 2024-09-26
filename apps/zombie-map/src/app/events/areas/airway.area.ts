@@ -9,16 +9,15 @@ export class AirWayArea implements BaseArea {
     Area.AerowayArea,
   ];
   events = [
-    'Lotnisko zostaje odcięte od świata – zombie na pasach startowych',
-    'Samolot pełen zombie ląduje awaryjnie',
-    'Horda atakuje terminal, pasażerowie uciekają w panice',
-    'Pilot zostaje zarażony w trakcie lotu – samolot nie ma kapitana',
-    'Schronienie w hangarze okazuje się pułapką',
-    'Zombie wychodzą z bagażników na lotnisku',
-    'Samolot ewakuacyjny zostaje zaatakowany podczas startu',
-    'Wieża kontrolna milknie – nikt nie ma kontaktu z miastem',
-    'Zombie opanowują lotniskowy parking, wszyscy są uwięzieni',
-    'Paliwo do samolotów wyczerpane – brak możliwości ewakuacji',
-  ];
+    'Lotnisko zostało odcięte od świata – Zainfekowani pojawili się na pasach startowych',
+    'Próbowaliście schronić się w hangarze, ale okazało się, że wewnątrz są Zainfekowani',
+    'Samolot ewakuacyjny nie mógł wystartować, bo paliwo było na wyczerpaniu',
+    'Wieża kontrolna przestała odpowiadać – komunikacja z miastem została zerwana',
+    'Zainfekowani opanowali lotniskowy terminal, zmuszając was do ucieczki na pas startowy',
+    'Parking lotniskowy został opanowany przez hordę – nie mieliście jak uciec',
+    'Znalazł się samolot pełen zapasów, ale inni ocalałych również chcieli się do niego dostać',
+    'Pasażerowie w terminalu zaczęli wpadać w panikę – Zainfekowani wdarli się do strefy odlotów',
+    'Na lotnisku odnaleźliście jedyny działający samolot, ale piloci zostali zarażeni',
+];
   name = 'airway';
 }

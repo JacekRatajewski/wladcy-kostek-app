@@ -6,6 +6,7 @@ import { RoadArea } from './areas/road.area';
 import { TrainArea } from './areas/train.area';
 import { AirWayArea } from './areas/airway.area';
 import { CountrysideArea } from './areas/countryside.area';
+import config from 'C:/envs/config.json';
 @Injectable({ providedIn: 'root' })
 export class EventsService {
   allAreas: BaseArea[] = [
@@ -35,7 +36,7 @@ export class EventsService {
 
   async getEventDescription(eventName: string): Promise<string | null> {
     const url = 'https://api.openai.com/v1/chat/completions';
-    const apiKey = process.env.OPENAIAPI_KEY; // Zamień to na swój klucz API
+    const apiKey = process.env.OPENAIAPI_KEY ?? config.OPENAIAPI_KEY; // Zamień to na swój klucz API
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');

@@ -5,6 +5,8 @@ import { EventsService } from '../events/events.service';
 import { Area } from '../events/area.enum';
 import { LocalstorageService } from '../localstorage.service';
 import { BehaviorSubject, Subject } from 'rxjs';
+import config from 'C:/envs/config.json';
+
 function showError(error: any) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
@@ -65,7 +67,9 @@ export class MapComponent implements AfterViewInit {
       center: { lat: 53.15142289006538, lng: 16.73766286078557 },
       zoom: 15,
       container: 'zombie-map',
-      style: `https://maps.geoapify.com/v1/styles/dark-matter/style.json?apiKey=${process.env.GEOAPI_KEY}`,
+      style: `https://maps.geoapify.com/v1/styles/dark-matter/style.json?apiKey=${
+        process.env.GEOAPI_KEY ?? config.GEOAPI_KEY
+      }`,
     });
 
     (this.popup.nativeElement as HTMLDivElement).onclick = (el) => {

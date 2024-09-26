@@ -6,6 +6,7 @@ import { RoadArea } from './areas/road.area';
 import { TrainArea } from './areas/train.area';
 import { AirWayArea } from './areas/airway.area';
 import { CountrysideArea } from './areas/countryside.area';
+// @ts-ignore: Enviroment files
 import config from 'C:/envs/config.json';
 @Injectable({ providedIn: 'root' })
 export class EventsService {

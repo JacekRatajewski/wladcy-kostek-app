@@ -5,6 +5,7 @@ import { EventsService } from '../events/events.service';
 import { Area } from '../events/area.enum';
 import { LocalstorageService } from '../localstorage.service';
 import { BehaviorSubject, Subject } from 'rxjs';
+// @ts-ignore: Enviroment files
 import config from 'C:/envs/config.json';
 
 function showError(error: any) {

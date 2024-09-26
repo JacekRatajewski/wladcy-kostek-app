@@ -3,9 +3,7 @@ const webpack = require('webpack');
 function getClientEnvironment() {
   const envVars = {};
   for (const key in process.env) {
-    if (Object.prototype.hasOwnProperty.call(process.env.hasOwnProperty, key)) {
-      envVars[key] = process.env[key];
-    }
+    envVars[key] = process.env[key];
   }
 
   return {

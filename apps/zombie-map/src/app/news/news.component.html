@@ -2,11 +2,13 @@
   <div class="grid news-grid">
     <div class="news-grid-header flex p-4 items-center w-full justify-between">
       <label class="text-white font-bold">{{ username }}</label>
-      <div class="flex flex-row">
+      <div *ngIf="hasRoot" class="flex flex-row">
         <select class="special-events px-4 py-2 bg-black text-white">
           <option value="-1" selected>NONE</option>
         </select>
-        <button class="px-4 py-2 bg-black text-white" (click)="addPost()">WYŚLIJ</button>
+        <button class="px-4 py-2 bg-black text-white" (click)="addPost()">
+          WYŚLIJ
+        </button>
       </div>
       <img src="../../assets/news.png" class="w-12" />
     </div>

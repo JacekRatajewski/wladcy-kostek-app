@@ -44,9 +44,11 @@ export class MapComponent implements AfterViewInit {
   count = 10;
   progress = 0;
   loaded = false;
+  hasRoot!: boolean;
   constructor(private es: EventsService, private ls: LocalstorageService) {}
 
   ngAfterViewInit(): void {
+    this.hasRoot = localStorage.getItem('root') === 'true' ?? false;
     const options = {
       enableHighAccuracy: true, // Request high accuracy if available
       timeout: 5000, // Set timeout to 5 seconds
@@ -55,8 +57,8 @@ export class MapComponent implements AfterViewInit {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log(`Latitude: ${position.coords.latitude}`);
-        console.log(`Longitude: ${position.coords.longitude}`);
+        alert(`Latitude: ${position.coords.latitude}`);
+        alert(`Longitude: ${position.coords.longitude}`);
       },
       showError,
       options
@@ -121,7 +123,7 @@ export class MapComponent implements AfterViewInit {
                 },
               });
             }
-            this.runWithVaryingInterval(map);
+            if (this.hasRoot) this.runWithVaryingInterval(map);
           }
         });
       this.loaded = true;

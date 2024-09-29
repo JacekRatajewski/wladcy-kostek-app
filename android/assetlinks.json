@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "wka.twa",
+        "sha256_cert_fingerprints": ["17:FE:53:93:8B:D0:8C:71:2A:BB:45:AC:7F:4D:69:F8:92:40:A3:56:CF:5F:07:A8:AB:3E:FC:00:20:BA:3F:87"]
+      }
+    }]

@@ -11,7 +11,8 @@ android/app-release-bundle.aab
 android/app-release-signed.apk
 android/app-release-signed.apk.idsig
 android/app-release-unsigned-aligned.apk
-android/app
+android/app/*
+android/.gradle/*
 
 # dependencies
 node_modules

@@ -1,12 +1,15 @@
 <wladcy-kostek-map *ngIf="router.url === '/map'"></wladcy-kostek-map>
 <div class="bg w-full h-full">
   <wladcy-kostek-news *ngIf="router.url === '/news'"></wladcy-kostek-news>
-  <div class="login w-full h-full" *ngIf="router.url === '/login'">
+  <div class="login w-full h-full" *ngIf="router.url === '/loggedIn'">
     <video #vid src="../assets/fire.mp4" loop autoplay muted></video>
     <div class="icons">
       <img src="../assets/news.png" (click)="router.navigateByUrl('/news')" />
       <img src="../assets/map.png" (click)="router.navigateByUrl('/map')" />
     </div>
+  </div>
+  <div class="download w-full h-full" *ngIf="router.url === '/download'">
+    <button class="px-4 py-2 bg-black text-white" (click)="downloadApk()">Download</button>
   </div>
   <div class="enter w-full h-full" *ngIf="router.url === '/'">
     <div class="login-enter">

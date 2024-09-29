@@ -5,7 +5,8 @@
 }
 
 .login,
-.enter {
+.enter,
+.download {
     video {
         position: absolute;
         bottom: 0;
@@ -23,6 +24,12 @@
         height: 10%;
         z-index: 10;
     }
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .icons {

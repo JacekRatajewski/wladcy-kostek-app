@@ -7,7 +7,11 @@ export const appRoutes: Route[] = [
     loadComponent: () => import('./app.component').then((m) => m.AppComponent),
   },
   {
-    path: 'login',
+    path: 'loggedIn',
+    loadComponent: () => import('./app.component').then((m) => m.AppComponent),
+  },
+  {
+    path: 'download',
     loadComponent: () => import('./app.component').then((m) => m.AppComponent),
   },
   {

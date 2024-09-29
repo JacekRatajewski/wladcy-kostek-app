@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Repos\\wladcy-kostek-app\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-bs\\values-bs.xml",
+            "outputFile": "F:\\Repos\\wladcy-kostek-app2\\wladcy-kostek-app\\android\\app\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-bs\\values-bs.xml",
             "map": [
                 {
                     "source": "C:\\Users\\broda\\.gradle\\caches\\transforms-2\\files-2.1\\b76183546e9802347e4b2c9dd5e9649b\\browser-1.4.0\\res\\values-bs\\values-bs.xml",

@@ -5,7 +5,7 @@
   "scripts": {
     "ngsw": "npx nx run wladcy-kostek-app:build --configuration=production && npx http-server -p 8080 -c-1 dist/apps/wladcy-kostek-app",
     "ngsw:zombie": "npx nx run zombie-map:build --configuration=production && npx http-server -p 8080 -c-1 dist/apps/zombie-map",
-    "apk": "cd ./android && bubblewrap build",
+    "apk": "cd ./android && bubblewrap build --skip-splash-screen",
     "start": "npx nx run wladcy-kostek-app:serve --configuration=development",
     "prepare": "husky"
   },

@@ -45,8 +45,8 @@ export class MapComponent implements AfterViewInit {
   progress = 0;
   loaded = false;
   hasRoot!: boolean;
-  latitude = 16.73766286078557;
-  longitude = 53.15142289006538;
+  latitude = 53.15142289006538;
+  longitude = 16.73766286078557;
   constructor(private es: EventsService, private ls: LocalstorageService) {
     const options = {
       enableHighAccuracy: true, // Request high accuracy if available
@@ -55,8 +55,8 @@ export class MapComponent implements AfterViewInit {
     };
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        this.latitude = position.coords.latitude ?? 16.73766286078557;
-        this.longitude = position.coords.longitude ?? 53.15142289006538;
+        this.latitude = position.coords.latitude ?? 53.15142289006538;
+        this.longitude = position.coords.longitude ?? 16.73766286078557;
       },
       showError,
       options

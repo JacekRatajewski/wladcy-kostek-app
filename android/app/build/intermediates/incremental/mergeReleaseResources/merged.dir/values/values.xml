@@ -2,12 +2,12 @@
 <resources>
     <bool name="enableNotification">true</bool>
     <bool name="enableSiteSettingsShortcut">true</bool>
-    <color name="backgroundColor">#FAFAFA</color>
+    <color name="backgroundColor">#000000</color>
     <color name="browser_actions_bg_grey">#F5F5F5</color>
     <color name="browser_actions_divider_color">#1E000000</color>
     <color name="browser_actions_text_color">#DE000000</color>
     <color name="browser_actions_title_color">#646464</color>
-    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="navigationColor">#000000</color>
     <color name="navigationColorDark">#000000</color>
@@ -92,14 +92,14 @@
     <item name="title" type="id"/>
     <integer name="splashScreenFadeOutDuration">300</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="appName" translatable="false">wladcy-kostek-app</string>
+    <string name="appName" translatable="false">watch-the-world-burn</string>
     <string name="app_name">Android Browser Helper</string>
     <string name="assetStatements">
     [{
         \"relation\": [\"delegate_permission/common.handle_all_urls\"],
         \"target\": {
             \"namespace\": \"web\",
-            \"site\": \"https://192.168.0.12\"
+            \"site\": \"https://wtwb.xyz\"
         }
     }]
     
@@ -109,11 +109,11 @@
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
-    <string name="fullScopeUrl" translatable="false">http://192.168.0.12:8080/</string>
+    <string name="fullScopeUrl" translatable="false">https://wtwb.xyz/</string>
     <string name="generatorApp" translatable="false">bubblewrap-cli</string>
-    <string name="hostName" translatable="false">192.168.0.12</string>
-    <string name="launchUrl" translatable="false">https://192.168.0.12/</string>
-    <string name="launcherName" translatable="false">wka</string>
+    <string name="hostName" translatable="false">wtwb.xyz</string>
+    <string name="launchUrl" translatable="false">https://wtwb.xyz/</string>
+    <string name="launcherName" translatable="false">WTWB</string>
     <string name="manage_space_no_data_toast">This app holds no browsing data.</string>
     <string name="manage_space_not_supported_toast">This app\'s data is stored in %1$s.</string>
     <string name="no_provider_toast">Please install Chrome Stable 72 or later.</string>
@@ -121,7 +121,7 @@
     <string name="providerAuthority" translatable="false">wka.twa.fileprovider</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="update_chrome_toast">Please update to Chrome Stable 72 or later.</string>
-    <string name="webManifestUrl" translatable="false">http://192.168.0.12:8080/manifest.webmanifest</string>
+    <string name="webManifestUrl" translatable="false">https://wtwb.xyz/manifest.webmanifest</string>
     <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
     <style name="TextAppearance.Compat.Notification.Info">
         <item name="android:textSize">12sp</item>

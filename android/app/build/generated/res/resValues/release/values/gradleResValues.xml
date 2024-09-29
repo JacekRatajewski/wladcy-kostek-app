@@ -4,11 +4,11 @@
     <!-- Automatically generated file. DO NOT MODIFY -->
 
     <!-- Value from default config. -->
-    <string name="appName" translatable="false">wladcy-kostek-app</string>
+    <string name="appName" translatable="false">watch-the-world-burn</string>
     <!-- Value from default config. -->
-    <color name="backgroundColor">#FAFAFA</color>
+    <color name="backgroundColor">#000000</color>
     <!-- Value from default config. -->
-    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimary">#000000</color>
     <!-- Value from default config. -->
     <color name="colorPrimaryDark">#000000</color>
     <!-- Value from default config. -->
@@ -18,15 +18,15 @@
     <!-- Value from default config. -->
     <string name="fallbackType" translatable="false">customtabs</string>
     <!-- Value from default config. -->
-    <string name="fullScopeUrl" translatable="false">http://192.168.0.12:8080/</string>
+    <string name="fullScopeUrl" translatable="false">https://wtwb.xyz/</string>
     <!-- Value from default config. -->
     <string name="generatorApp" translatable="false">bubblewrap-cli</string>
     <!-- Value from default config. -->
-    <string name="hostName" translatable="false">192.168.0.12</string>
+    <string name="hostName" translatable="false">wtwb.xyz</string>
     <!-- Value from default config. -->
-    <string name="launchUrl" translatable="false">https://192.168.0.12/</string>
+    <string name="launchUrl" translatable="false">https://wtwb.xyz/</string>
     <!-- Value from default config. -->
-    <string name="launcherName" translatable="false">wka</string>
+    <string name="launcherName" translatable="false">WTWB</string>
     <!-- Value from default config. -->
     <color name="navigationColor">#000000</color>
     <!-- Value from default config. -->
@@ -42,6 +42,6 @@
     <!-- Value from default config. -->
     <integer name="splashScreenFadeOutDuration">300</integer>
     <!-- Value from default config. -->
-    <string name="webManifestUrl" translatable="false">http://192.168.0.12:8080/manifest.webmanifest</string>
+    <string name="webManifestUrl" translatable="false">https://wtwb.xyz/manifest.webmanifest</string>
 
 </resources>

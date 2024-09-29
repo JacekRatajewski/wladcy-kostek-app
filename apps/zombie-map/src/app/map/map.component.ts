@@ -45,27 +45,30 @@ export class MapComponent implements AfterViewInit {
   progress = 0;
   loaded = false;
   hasRoot!: boolean;
-  constructor(private es: EventsService, private ls: LocalstorageService) {}
-
-  ngAfterViewInit(): void {
-    this.hasRoot = localStorage.getItem('root') === 'true' ?? false;
+  latitude = 16.73766286078557;
+  longitude = 53.15142289006538;
+  constructor(private es: EventsService, private ls: LocalstorageService) {
     const options = {
       enableHighAccuracy: true, // Request high accuracy if available
       timeout: 5000, // Set timeout to 5 seconds
       maximumAge: 0, // Do not use cached location data
     };
-
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        alert(`Latitude: ${position.coords.latitude}`);
-        alert(`Longitude: ${position.coords.longitude}`);
+        this.latitude = position.coords.latitude ?? 16.73766286078557;
+        this.longitude = position.coords.longitude ?? 53.15142289006538;
       },
       showError,
       options
     );
+  }
+
+  ngAfterViewInit(): void {
+    this.hasRoot = localStorage.getItem('root') === 'true' ?? false;
+
     this.ls.get$('features', this.features$);
     const map = new maplibregl.Map({
-      center: { lat: 53.15142289006538, lng: 16.73766286078557 },
+      center: { lat: this.latitude, lng: this.longitude },
       zoom: 15,
       container: 'zombie-map',
       style: `https://maps.geoapify.com/v1/styles/dark-matter/style.json?apiKey=${process.env.GEOAPI_KEY}`,

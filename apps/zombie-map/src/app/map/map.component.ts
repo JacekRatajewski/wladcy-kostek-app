@@ -6,22 +6,6 @@ import { Area } from '../events/area.enum';
 import { LocalstorageService } from '../localstorage.service';
 import { BehaviorSubject, Subject } from 'rxjs';
 
-function showError(error: any) {
-  switch (error.code) {
-    case error.PERMISSION_DENIED:
-      console.log('User denied the request for Geolocation.');
-      break;
-    case error.POSITION_UNAVAILABLE:
-      console.log('Location information is unavailable.');
-      break;
-    case error.TIMEOUT:
-      console.log('The request to get user location timed out.');
-      break;
-    case error.UNKNOWN_ERROR:
-      console.log('An unknown error occurred.');
-      break;
-  }
-}
 @Component({
   standalone: true,
   imports: [RouterModule],
@@ -47,7 +31,26 @@ export class MapComponent implements AfterViewInit {
   hasRoot!: boolean;
   latitude = 53.15142289006538;
   longitude = 16.73766286078557;
-  constructor(private es: EventsService, private ls: LocalstorageService) {
+  constructor(private es: EventsService, private ls: LocalstorageService) {}
+  showError(error: any) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        console.log('User denied the request for Geolocation.');
+        break;
+      case error.POSITION_UNAVAILABLE:
+        console.log('Location information is unavailable.');
+        break;
+      case error.TIMEOUT:
+        console.log('The request to get user location timed out.');
+        break;
+      case error.UNKNOWN_ERROR:
+        console.log('An unknown error occurred.');
+        break;
+    }
+    this.init();
+  }
+  ngAfterViewInit(): void {
+    this.hasRoot = localStorage.getItem('root') === 'true' ?? false;
     const options = {
       enableHighAccuracy: true, // Request high accuracy if available
       timeout: 5000, // Set timeout to 5 seconds
@@ -57,15 +60,14 @@ export class MapComponent implements AfterViewInit {
       (position) => {
         this.latitude = position.coords.latitude ?? 53.15142289006538;
         this.longitude = position.coords.longitude ?? 16.73766286078557;
+        this.init();
       },
-      showError,
+      this.showError,
       options
     );
   }
 
-  ngAfterViewInit(): void {
-    this.hasRoot = localStorage.getItem('root') === 'true' ?? false;
-
+  init() {
     this.ls.get$('features', this.features$);
     const map = new maplibregl.Map({
       center: { lat: this.latitude, lng: this.longitude },

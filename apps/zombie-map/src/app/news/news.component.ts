@@ -19,9 +19,11 @@ export class NewsComponent implements OnInit {
   newPost$: Subject<News> = new Subject<News>();
   username!: string;
   posts: News[] = [];
+  hasRoot!: boolean;
   constructor(private ns: NewsService, private ls: LocalstorageService) {}
 
   ngOnInit(): void {
+    this.hasRoot = localStorage.getItem('root') === 'true' ?? false;
     this.posts$.subscribe({
       next: (v) => {
         this.posts = v.sort((x, y) =>

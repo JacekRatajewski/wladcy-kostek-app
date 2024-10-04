@@ -24,5 +24,6 @@ export * from './lib/fabrics/error.fabric';
 export * from './lib/components/theme-picker/model/theme.model';
 export * from './lib/components/button/models/colors.model';
 export * from './lib/models/base-response.model';
+export * from './lib/models/base-response-2.model';
 // UTILS
 export * from './lib/utils/tests/mocks/cdkScroll.mock'

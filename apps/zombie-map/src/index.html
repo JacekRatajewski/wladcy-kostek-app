@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>WTWB</title>
-    <base href="/"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="./assets/logo.png"/>
-    <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1976d2">
-</head>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./assets/logo.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1976d2" />
+  </head>
   <body>
     <wladcy-kostek-app-root></wladcy-kostek-app-root>
-    <noscript>Please enable JavaScript to continue using this application.</noscript>
-</body>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
+  </body>
+  ->
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- stats.js lib -->
+  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
   <script>
-    window.db
+    window.db;
     const request = indexedDB.open('db', 1);
     request.onupgradeneeded = function (event) {
       window.db = event.target.result;

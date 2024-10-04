@@ -62,7 +62,7 @@ export class MapComponent implements AfterViewInit {
         this.longitude = position.coords.longitude ?? 16.73766286078557;
         this.init();
       },
-      this.showError,
+      this.showError.bind(this),
       options
     );
   }
@@ -205,7 +205,7 @@ export class MapComponent implements AfterViewInit {
             currentDelay /
             60 /
             1000
-          ).toFixed(2)}min], Progres: [${Math.round(this.progress)}/100]`
+          ).toFixed(2)}min], Progres: [${Math.round(this.progress*100)}/100]`
         );
       } else {
         this.runWithVaryingInterval(map);

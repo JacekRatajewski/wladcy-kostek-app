@@ -46,6 +46,7 @@
     "libsodium-wrappers": "^0.7.13",
     "maplibre-gl": "^4.7.0",
     "node-fetch": "^3.3.0",
+    "particle.js": "^1.0.7",
     "path": "^0.12.7",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

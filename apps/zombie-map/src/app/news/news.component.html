@@ -3,8 +3,17 @@
     <div class="news-grid-header flex p-4 items-center w-full justify-between">
       <label class="text-white font-bold">{{ username }}</label>
       <div *ngIf="hasRoot" class="flex flex-row">
-        <select class="special-events px-4 py-2 bg-black text-white">
+        <select
+          class="special-events px-4 py-2 bg-black text-white"
+          (change)="onSelectChange($event)"
+        >
           <option value="-1" selected>NONE</option>
+          <option
+            *ngFor="let post of rootPosts"
+            [value]="post.id ?? post.title"
+          >
+            {{ post.title }}
+          </option>
         </select>
         <button class="px-4 py-2 bg-black text-white" (click)="addPost()">
           WYŚLIJ
@@ -16,13 +25,25 @@
       <div *ngFor="let post of posts" class="post grid p-8">
         <div class="flex items-center">
           <img
-            [src]="'data:image/png;base64, ' + post.imageBase64"
-            class="w-8 h-8 rounded-full"
+            [src]="
+              post.imageBase64?.startsWith('http')
+                ? post.imageBase64
+                : 'data:image/png;base64, ' + post.imageBase64
+            "
+            class="w-8 h-8 rounded-full avatar"
           />
           <label class="text-white pl-3">{{ post.userId }}</label>
         </div>
         <div class="post-content">
           <div class="title text-white">{{ post.title }}</div>
+          <div class="videowrapper" [class.hidden]="!post.videoUrl">
+            <video
+              [src]="post.videoUrl"
+              [muted]="'muted'"
+              autoplay
+              loop
+            ></video>
+          </div>
           <div class="message text-white">
             {{ removeHashtags(post.message) }}
           </div>
@@ -36,4 +57,6 @@
       </div>
     </div>
   </div>
+  <!-- particles.js container -->
+  <div id="particles-js"></div>
 </div>

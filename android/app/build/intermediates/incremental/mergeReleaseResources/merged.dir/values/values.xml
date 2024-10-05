@@ -92,7 +92,7 @@
     <item name="title" type="id"/>
     <integer name="splashScreenFadeOutDuration">300</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="appName" translatable="false">watch-the-world-burn</string>
+    <string name="appName" translatable="false">Watch The World Burn</string>
     <string name="app_name">Android Browser Helper</string>
     <string name="assetStatements">
     [{

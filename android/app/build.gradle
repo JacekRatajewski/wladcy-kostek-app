@@ -24,7 +24,7 @@ def twaManifest = [
     applicationId: 'wka.twa',
     hostName: 'wtwb.xyz', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
-    name: 'watch-the-world-burn', // The application name.
+    name: 'Watch The World Burn', // The application name.
     launcherName: 'WTWB', // The name shown on the Android Launcher.
     themeColor: '#000000', // The color used for the status bar.
     themeColorDark: '#000000', // The color used for the dark status bar.
@@ -56,8 +56,8 @@ android {
         applicationId "wka.twa"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 8
-        versionName "8"
+        versionCode 10
+        versionName "10"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name

@@ -1,7 +1,7 @@
 {
   "packageId": "wka.twa",
   "host": "wtwb.xyz",
-  "name": "watch-the-world-burn",
+  "name": "Watch The World Burn",
   "launcherName": "WTWB",
   "display": "fullscreen",
   "themeColor": "#000000",
@@ -20,8 +20,8 @@
     "path": "F:\\Repos\\wladcy-kostek-app\\android\\android.keystore",
     "alias": "wka"
   },
-  "appVersionName": "8",
-  "appVersionCode": 8,
+  "appVersionName": "10",
+  "appVersionCode": 10,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://wtwb.xyz/manifest.webmanifest",
@@ -43,5 +43,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "8"
+  "appVersion": "10"
 }

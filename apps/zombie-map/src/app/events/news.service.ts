@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, isDevMode } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Observable } from 'rxjs';
@@ -46,6 +46,9 @@ export class NewsService {
     });
   }
   sendMessage(news: News): Observable<BaseResponse2<number>> {
-    return this.http.post<BaseResponse2<number>>(`${this.url}/news`, news);
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${process.env.WKAPI_TOKEN}`
+    });
+    return this.http.post<BaseResponse2<number>>(`${this.url}/news`, news, {headers});
   }
 }

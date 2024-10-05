@@ -22,6 +22,7 @@ jobs:
         env:
             OPENAIAPI_KEY: ${{ secrets.openaiapi_key }}
             GEOAPI_KEY: ${{ secrets.geoapi_key }}
+            WKAPI_TOKEN: ${{ secrets.wkapi_token }}
       - uses: actions/upload-artifact@v4.3.3
         with:
           name: dist

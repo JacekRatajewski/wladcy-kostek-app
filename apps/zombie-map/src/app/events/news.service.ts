@@ -12,7 +12,7 @@ export class NewsService {
 
   constructor(private http: HttpClient) {
     this.url = `${
-      isDevMode() ? 'http://localhost:5000' : 'http://20.82.145.167:82'
+      isDevMode() ? 'http://localhost:5000' : 'https://wtwbapi.xyz:444'
     }`;
     this.hubConnection = new signalR.HubConnectionBuilder()
       .withUrl(`${this.url}/newsHub`, {

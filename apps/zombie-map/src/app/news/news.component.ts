@@ -35,10 +35,29 @@ export class NewsComponent implements OnInit {
       title: 'Jeleń Zombie, Nie uwierzysz!',
     },
     {
-      message:
-        'Widziałem coś, czego nie da się opisać... Zombie jeleń. Tak, dobrze czytacie. Pędził przez las jak szalony, trup, a jednak wciąż się rusza. Jak z tego chorego filmu "Train to Busan", tylko to dzieje się tu, na żywo. Nie wiem, co tu się dzieje, ale jeśli takie bestie biegają po okolicy, to nie mamy szans. Bądźcie ostrożni. One się zmieniają. #ZombieJeleń #PoznańApokalipsa #StayVigilant',
-      title: 'Jeleń Zombie, Nie uwierzysz!',
+      message: 'Nie wiem, czy to czytasz, czy jeszcze żyjesz... Wczoraj wieczorem dałem Ci tę zagadkę, ale teraz żałuję. To nie była zabawka. Nie wiedziałem, co się stanie. Nie rozumiem, co się dzieje, ale ludzie umierają... a potem... wracają. Posłuchaj, jeśli to czytasz, musisz znaleźć odpowiedź na tę zagadkę. To może być twoja jedyna nadzieja. Pierwsza litera, którą Ci podam to M. Pamiętaj o tym. Musisz zebrać wszystkie.',
+      title: 'Zagadka Lu Ban 1'
     },
+    {
+      message: 'Jest coraz gorzej, wszędzie są krzyki. Ludzie znikają. Jestem w szpitalu, a to, co tu widzę... Nie mogę tego opisać. Słuchaj, ta zagadka, którą Ci dałem... ona jest ważna. Może być jedyną szansą. Kolejna litera, którą musisz zapamiętać, to Z. Nie wiem, ile czasu zostało, ale musisz działać szybko. Błagam Cię, nie ignoruj tego!',
+      title: 'Zagadka Lu Ban 2'
+    },
+    {
+      message: 'Jestem pewien, że ta zagadka to coś więcej niż tylko gra. Może to być antidotum, jakieś lekarstwo, coś, co powstrzyma to, co się dzieje. Nie jestem pewien, ale musisz zebrać wszystkie litery, żeby znaleźć odpowiedź. Kolejna litera to O. Proszę, jeśli jeszcze żyjesz, znajdź te litery. To może być jedyny sposób, żeby to zatrzymać.',
+      title: 'Zagadka Lu Ban 3'
+    },
+    {
+      message: 'Słyszę ich. Są coraz bliżej. Widziałem rzeczy, których nie potrafię wyjaśnić. Ci ludzie... oni nie żyją, a jednak wciąż się poruszają. Jeśli nie znajdziesz rozwiązania, wszyscy zginiemy. Kolejna litera to I. Zbieraj je, bo to może być klucz do wszystkiego. Nie wiem, ile jeszcze mam czasu.',
+      title: 'Zagadka Lu Ban 4'
+    },
+    {
+      message: 'Wiem, że to brzmi jak szaleństwo, ale musisz mi uwierzyć. Wszystko, co dałem Ci wczoraj, może być odpowiedzią. Już nie wiem, komu ufać, ale jeśli Ty wciąż jesteś przy życiu, musisz mi zaufać. Kolejna litera to B. Zapamiętaj ją. Zostało niewiele czasu.',
+      title: 'Zagadka Lu Ban 5'
+    },
+    {
+      message: 'To może być ostatnia wiadomość, którą wysyłam. Oni są wszędzie. Widziałem, co się z nimi dzieje, kiedy wracają. Musisz zebrać wszystkie litery i znaleźć rozwiązanie. Może to otworzy coś ważnego... Kolejna litera to E. Jeśli zebraliście wszystkie, to powinno dać odpowiedź. Proszę, nie marnuj tego.',
+      title: 'Zagadka Lu Ban 6'
+    }
   ];
   public selectedValue: string | number = -1;
   constructor(

@@ -16,6 +16,9 @@ jobs:
           cache: 'npm'
       - run: npm i
       - run: npx nx run wladcy-kostek-app:build --configuration=production
+        env:
+            API_URL: ${{ secrets.api_url }}
+            JWT_TOKEN: ${{ secrets.jwt_token }}
       - run: npx nx run rpg-butler:build --configuration=production
       - name: Build zombie-map
         run: npx nx run zombie-map:build --configuration=production

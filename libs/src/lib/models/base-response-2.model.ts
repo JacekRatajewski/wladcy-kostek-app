@@ -1,5 +1,5 @@
 export interface BaseResponse2<T> {
-    Result: T;
-    ErrorMessage: string;
-    ErrorCode: string;
+    result: T;
+    errorMessage: string;
+    errorCode: string;
   }

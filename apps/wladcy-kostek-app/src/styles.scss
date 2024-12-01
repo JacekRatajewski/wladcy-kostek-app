@@ -6,3 +6,13 @@
 @layer base {
   @import 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&display=swap';
 }
+
+.wka-fixed-full_screen {
+  position: fixed !important;
+}
+
+wka-ui-spinner.wka-persistent {
+  background-image: url('assets/backgrounds/wkbg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

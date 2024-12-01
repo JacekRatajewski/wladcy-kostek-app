@@ -8,7 +8,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ThemeService } from '@wka/ui';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, delay, Subscription, timer } from 'rxjs';
 
 @Component({
   selector: 'wka-layout',
@@ -18,10 +18,26 @@ import { Subscription } from 'rxjs';
 export class LayoutComponent implements AfterViewInit, OnDestroy {
   @ViewChild('layout') layout!: ElementRef;
   private themeSub!: Subscription;
-  constructor(
-    private themeService: ThemeService,
-    private renderer: Renderer2
-  ) {}
+  public isLoading$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  constructor(private themeService: ThemeService, private renderer: Renderer2) {
+    const dummy$ = timer(1000);
+    dummy$.subscribe({
+      next: () => {
+        this.isLoading$.next(false);
+      },
+    });
+    this.isLoading$.pipe(delay(1)).subscribe({
+      next: (v) => {
+        if (!v) {
+          this.renderer.setAttribute(
+            this.layout.nativeElement,
+            'data-theme',
+            'dark'
+          );
+        }
+      },
+    });
+  }
 
   ngAfterViewInit(): void {
     this.themeSub = this.themeService.theme$.subscribe({

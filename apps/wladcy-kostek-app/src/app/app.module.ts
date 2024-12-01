@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { UiModule } from '@wka/ui';
 import { provideServiceWorker } from '@angular/service-worker';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './error/error.component';
 import { NewsModule } from './news/news.module';
+import { BonusesModule } from './bonuses/bonuses.module';
+import { AuthInterceptor } from '../shared/interceptors/auth.interceptor';
 
 @NgModule({
   imports: [
@@ -19,7 +21,8 @@ import { NewsModule } from './news/news.module';
     UiModule,
     LayoutModule,
     HomeModule,
-    NewsModule
+    NewsModule,
+    BonusesModule,
   ],
   providers: [
     importProvidersFrom(HttpClientModule),
@@ -29,6 +32,11 @@ import { NewsModule } from './news/news.module';
       registrationStrategy: 'registerWhenStable:30000',
     }),
     { provide: 'featureFlagPath', useValue: 'assets/json/feature-flags.json' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
   ],
   declarations: [AppComponent, ErrorComponent],
   bootstrap: [AppComponent],

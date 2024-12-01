@@ -1,11 +1,16 @@
-<div
-  #layout
-  class="wka-grid-wrapper grid grid-cols-sidebar grid-rows-header w-screen h-screen bg-background text-text font-text overflow-hidden"
->
-  <wka-header class="wka-grid-header"></wka-header>
-  <wka-sidebar class="wka-grid-sidebar"></wka-sidebar>
-  <div class="wka-grid-content">
-    <div class="absolute w-full h-full z-50"><ng-content></ng-content></div>
-    <wka-liquid></wka-liquid>
+<ng-container *ngIf="(isLoading$ | async) === false; else loading">
+  <div
+    #layout
+    class="wka-grid-wrapper grid grid-cols-sidebar grid-rows-header w-screen h-screen bg-background text-text font-text overflow-hidden"
+  >
+    <wka-header class="wka-grid-header"></wka-header>
+    <wka-sidebar class="wka-grid-sidebar"></wka-sidebar>
+    <div class="wka-grid-content">
+      <div class="absolute w-full h-full z-50"><ng-content></ng-content></div>
+      <wka-liquid></wka-liquid>
+    </div>
   </div>
-</div>
+</ng-container>
+<ng-template #loading>
+  <wka-ui-spinner class="wka-persistent" [persistent]="true"></wka-ui-spinner>
+</ng-template>

@@ -1,0 +1,57 @@
+@import '@wka/ui/src/index';
+
+.wka-bonuses-wrapper {
+    background-image: url('../../../../assets/backgrounds/wkbg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input,
+select {
+    all: unset;
+    background: $text;
+    color: $quinary;
+    padding: 0;
+    padding-left: 1rem;
+    width: 50%;
+    font-size: 2rem;
+}
+
+select {
+    width: 80%;
+    height: 2rem;
+    font-size: 1rem;
+    color: $text;
+    line-height: 2rem;
+}
+
+.wka-session-count {
+    top: -25px;
+    right: -55px;
+}
+
+#info {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.wka-table {
+    margin-left: -6rem;
+}
+
+select option:first-child {
+    color: $quaternary;
+}
+
+select option[value=""] {
+    color: $quaternary;
+}
+
+select:valid option[value=""] {
+    color: $text;
+}
+
+select option {
+    color: $text;
+}

@@ -2,7 +2,7 @@
 
 .wkaButton {
     position: relative;
-    transition: all 1s;
+    transition: opacity 1s;
 
     &:hover::after {
         content: '\A';
@@ -12,8 +12,8 @@
         top: 0;
         left: 0;
         background: $overlay2;
-        opacity: 1;
-        transition: all 0.5s;
+        opacity: 1 !important;
+        transition: opacity 0.5s;
     }
 
 

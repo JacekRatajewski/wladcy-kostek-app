@@ -15,6 +15,10 @@ export const appRoutes: Route[] = [
         path: 'news',
         loadChildren: () => import('./news/news.module').then((m) => m.NewsModule),
       },
+      {
+        path: 'myBonuses',
+        loadChildren: () => import('./bonuses/bonuses.module').then((m) => m.BonusesModule),
+      }
     ],
   },
   {

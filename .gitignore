@@ -53,3 +53,4 @@ Thumbs.db
 apps/rpg-butler/src/assets/cards.json
 apps/rpg-butler/src/assets/config.json
 apps/zombie-map/.env.local
+apps/wladcy-kostek-app/.env.local

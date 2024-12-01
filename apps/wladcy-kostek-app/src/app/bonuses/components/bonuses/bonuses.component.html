@@ -1,0 +1,92 @@
+<ng-container *ngIf="!id; else fullInfo">
+  <div class="w-full h-full flex fixed wka-bonuses-wrapper">
+    <div
+      class="w-full h-full text-text font-header text-5xl flex justify-center flex-col gap-4 items-center pl-8"
+    >
+      <img class="w-2/6" src="../../../../assets/icons/fulllogo.svg" />
+      <h1>Sprawdź jakie masz bonusy!</h1>
+      <div class="flex justify-center items-end gap-2">
+        <input (change)="onChange($event)" class="h-12" type="text" />
+        <wka-ui-button
+          (click)="getMyBonuses()"
+          [class]="'h-12 text-2xl rounded-none'"
+          >SPRAWDŹ</wka-ui-button
+        >
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #fullInfo>
+  <div class="w-full h-full flex fixed wka-bonuses-wrapper bg-cover bg-center">
+    <div class="w-full h-full flex justify-center items-center px-8">
+      <div class="grid grid-cols-2 gap-6 text-white w-full h-full">
+        <div class="flex flex-col gap-6 justify-center items-center">
+          <div class="text-center">
+            <div class="relative">
+              <h1 class="text-4xl font-header font-bold">
+                {{ bonusInfo.name }}
+              </h1>
+              <div
+                class="wka-session-count absolute w-12 h-12 font-header flex items-center justify-center bg-secondary text-white rounded-full text-xl font-extrabold shadow-lg"
+              >
+                {{ bonusInfo.sessionCount }}
+                <wka-ui-icon
+                  [static]="true"
+                  path="assets/icons/info.svg"
+                  id="info"
+                  [tooltip]="'Tyle sesji zagrałeś z Władcami Kostek!'"
+                ></wka-ui-icon>
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col items-center justify-center">
+            <span
+              class="block mt-2 text-lg font-header font-semibold uppercase tracking-wider"
+            >
+              Zebrane Bonusy
+            </span>
+            <div
+              class="w-32 h-32 font-header flex items-center justify-center bg-primary text-white rounded-full text-6xl font-extrabold shadow-lg"
+            >
+              {{ bonusInfo.bonusCount }}
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <div
+            class="wka-table bg-quinary p-6 rounded-lg w-3/4 h-2/4 text-white text-left shadow-lg mt-40"
+          >
+            <div class="flex justify-between items-center mb-4">
+              <h2 class="font-header text-3xl font-extrabold">
+                Sprawdź Bonusy
+              </h2>
+              <span
+                class="bg-secondary text-sm font-semibold font-text text-white px-3 py-1 rounded-lg"
+                >{{ bonusesInfos[0].season }}</span
+              >
+            </div>
+            <div class="flex justify-center items-center mb-4">
+              <select (change)="selectBonusInfo($event)" class="bg-tertiary">
+                <option class="text-tertiary" disabled selected value="">
+                  Wybierz system
+                </option>
+                <option
+                  value="{{ bonus.system }}"
+                  *ngFor="let bonus of bonusesInfos"
+                >
+                  {{ bonus.system }}
+                </option>
+              </select>
+            </div>
+
+            <ul class="list-disc pl-5 space-y-2 font-text">
+              <li *ngFor="let bonus of currentBonusInfo?.bonuses">
+                {{ bonus }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

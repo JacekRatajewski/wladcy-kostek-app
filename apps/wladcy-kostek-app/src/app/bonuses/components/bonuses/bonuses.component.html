@@ -23,11 +23,21 @@
         <div class="flex flex-col gap-6 justify-center items-center">
           <div class="text-center">
             <div class="relative">
+              <span
+                class="wka-season-start absolute bg-secondary text-sm font-semibold font-text text-white px-3 py-1 rounded-lg"
+                >Sezon {{ bonusInfo.playerSeasonStart }}
+                <wka-ui-icon
+                  [static]="true"
+                  path="assets/icons/info.svg"
+                  id="info"
+                  [tooltip]="'Jesteś z nami od tego Sezonu!'"
+                ></wka-ui-icon
+              ></span>
               <h1 class="text-4xl font-header font-bold">
                 {{ bonusInfo.name }}
               </h1>
               <div
-                class="wka-session-count absolute w-12 h-12 font-header flex items-center justify-center bg-secondary text-white rounded-full text-xl font-extrabold shadow-lg"
+                class="wka-session-count absolute w-12 h-12 font-header flex items-center justify-center bg-secondary text-white rounded-full text-xl font-semibold shadow-lg"
               >
                 {{ bonusInfo.sessionCount }}
                 <wka-ui-icon

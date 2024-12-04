@@ -3,7 +3,8 @@ export interface Bonus {
     name: string;
     sessionCount: number;
     bonusCount: number;
-    moneySupported: number; 
+    moneySupported: number;
+    playerSeasonStart: number;
 }
 
 export interface BonusInfo {

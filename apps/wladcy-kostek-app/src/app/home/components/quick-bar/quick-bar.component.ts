@@ -16,16 +16,8 @@ import { spinner } from '@wka/ui';
   templateUrl: './quick-bar.component.html',
   styleUrl: './quick-bar.component.scss',
 })
-export class QuickBarComponent implements AfterViewInit {
+export class QuickBarComponent {
   @ViewChild(SpinnerComponent) spinnerComponent!: SpinnerComponent;
   public latestApps$: Subject<LatestApp[]> = new Subject();
   constructor(public quickbarService: AppsService, public sessionService: SessionService) {}
-  ngAfterViewInit(): void {
-    this.quickbarService
-      .getLatestApps$()
-      .pipe(spinner(this.spinnerComponent))
-      .subscribe({
-        next: (res) => this.latestApps$.next(res),
-      });
-  }
 }

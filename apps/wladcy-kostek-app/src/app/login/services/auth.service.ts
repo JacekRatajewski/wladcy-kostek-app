@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BaseResponse } from '@wka/ui';
+import {  BaseResponse2 } from '@wka/ui';
 import { map } from 'rxjs';
 import { IUser } from './model/user.model';
 
@@ -11,18 +11,18 @@ export class AuthService {
   googleLogin(token: string) {
     return this.http
       .post(`${process.env.API_URL}/auth/google-login`, { token })
-      .pipe(map((res: any) => (res as BaseResponse<IUser>).response));
+      .pipe(map((res: any) => (res as BaseResponse2<IUser>).result));
   }
 
   login(login: string, password: string) {
     return this.http
       .post(`${process.env.API_URL}/auth/login`, { login, password })
-      .pipe(map((res: any) => (res as BaseResponse<IUser>).response));
+      .pipe(map((res: any) => (res as BaseResponse2<IUser>).result));
   }
 
   register(login: string, password: string, email: string) {
     return this.http
       .post(`${process.env.API_URL}/auth/login`, { login, password, email })
-      .pipe(map((res: any) => (res as BaseResponse<IUser>).response));
+      .pipe(map((res: any) => (res as BaseResponse2<IUser>).result));
   }
 }

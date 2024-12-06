@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { BaseResponse, handleError } from '@wka/ui';
+import { BaseResponse2 } from '@wka/ui';
 import { News } from '../models/news.model';
 
 @Injectable({ providedIn: 'root' })
@@ -15,7 +15,7 @@ export class NewsService {
           pageSize ? 'scrappedNews' : 'scrappedNews/more'
         }`
       )
-      .pipe(map((res: any) => (res as BaseResponse<News[]>).response));
+      .pipe(map((res: any) => (res as BaseResponse2<News[]>).result));
   }
 
   getNews$(): Observable<News[]> {
@@ -23,6 +23,6 @@ export class NewsService {
       .get(
         `${process.env.API_URL}/scrappedNews/all`
       )
-      .pipe(map((res: any) => (res as BaseResponse<News[]>).response));
+      .pipe(map((res: any) => (res as BaseResponse2<News[]>).result));
   }
 }

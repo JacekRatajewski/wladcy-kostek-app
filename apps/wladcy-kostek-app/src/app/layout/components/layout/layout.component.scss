@@ -1,6 +1,12 @@
 
 
 .wka-grid-wrapper {
+    @media (width <= 1024px) {
+        grid-template-areas:
+        "header header"
+        "content content";
+    }
+
     grid-template-areas:
         "header header"
         "sidebar content";

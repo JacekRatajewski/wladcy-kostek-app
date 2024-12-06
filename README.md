@@ -4,9 +4,11 @@
 
 ## Applications within monorepository:
 
-- **wladcy-kostek-app** - Main application for community. It's a panel app with permissions to other applications and has many community friendly features, like global chat, news from around the world, profile with additional bonuses from coupons.
+- **wladcy-kostek-app** - Main application for community. It's a panel app with permissions to other applications and has many community friendly features, like global chat, news from around the world aboud pen & paper games, profile with additional bonuses from coupons. Also contains MyBonuses view for supporters of discord community.
 
 - **rpg-butler** - Discrod Bot application for Władcy Kostek discrod server, it has commands for rolling dices or more specific ones created for diffrent rpg systems.
+
+- **zombie-map** - Angular PWA application wrapped with bubblewrap to an .apk android application. Application contains integration with BackgroundWorkers sending messages with SignalR. Second module integrates Geoapify map and generates random zombie apocalypse encounters with Strategy Pattern.
 
 ## Start the application
 

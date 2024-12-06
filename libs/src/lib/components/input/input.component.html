@@ -1,0 +1,8 @@
+<div class="wkaInput justify-between items-center rounded-full">
+  <wka-ui-icon *ngIf="icon" [path]="icon" [static]="true"></wka-ui-icon>
+  <input
+    [placeholder]="placeholder"
+    [type]="type"
+    (change)="onChange($event)"
+  />
+</div>

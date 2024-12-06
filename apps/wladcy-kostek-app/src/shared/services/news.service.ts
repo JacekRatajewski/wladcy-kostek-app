@@ -12,7 +12,7 @@ export class NewsService {
     return this.http
       .get(
         `${process.env.API_URL}/${
-          pageSize ? 'news' : 'newsAll'
+          pageSize ? 'scrappedNews' : 'scrappedNews/more'
         }`
       )
       .pipe(map((res: any) => (res as BaseResponse<News[]>).response));
@@ -21,7 +21,7 @@ export class NewsService {
   getNews$(): Observable<News[]> {
     return this.http
       .get(
-        `${process.env.API_URL}/newsAll`
+        `${process.env.API_URL}/scrappedNews/all`
       )
       .pipe(map((res: any) => (res as BaseResponse<News[]>).response));
   }

@@ -3,4 +3,8 @@
     <div class="absolute top-0 w-full">
         <wka-ui-loader></wka-ui-loader>
     </div>
+    <div class="flex w-fit gap-4 items-center mr-4">
+        <wka-ui-input icon="assets/icons/search.svg" type="text" placeholder="szukaj"></wka-ui-input>
+        <wka-ui-button [onClick]="signIn.bind(this)" [color]="ButtonColors.primary">Zaloguj</wka-ui-button>
+    </div>
 </div>

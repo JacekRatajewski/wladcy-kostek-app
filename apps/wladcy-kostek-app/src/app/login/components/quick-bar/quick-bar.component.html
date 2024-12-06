@@ -1,0 +1,83 @@
+<div
+  class="relative flex flex-col w-full h-full bg-quinary bg-opacity-60 z-10 border-l-4 border-border"
+>
+  <div class="w-full h-full flex flex-col justify-center items-center">
+    <label class="ml-6 mr-6 mt-8 mb-8 font-header text-4xl">{{
+      type === 'signIn' ? 'Zaloguj się' : 'Zarejestruj się'
+    }}</label>
+    <ng-container *ngIf="type === 'signIn'; else signUpTemplate">
+      <form
+        [formGroup]="loginForm"
+        class="w-full h-fit flex flex-col justify-center items-center gap-4"
+      >
+        <wka-ui-input
+          formControlName="login"
+          type="text"
+          placeholder="login"
+        ></wka-ui-input>
+        <wka-ui-input
+          formControlName="password"
+          type="password"
+          placeholder="hasło"
+        ></wka-ui-input>
+        <div>
+          Nie masz konta
+          <span
+            (click)="goToSignUp($event)"
+            class="text-secondary underline cursor-pointer"
+            >dołącz do nas!</span
+          >
+        </div>
+        <div class="flex gap-4 justify-center items-center">
+          <wka-ui-button (click)="signIn($event)">Zaloguj</wka-ui-button>
+          <div class="relative">
+            <asl-google-signin-button
+              #googleBtn
+              class="wka-google opacity-0 absolute w-full z-50"
+              type="standard"
+              size="medium"
+            ></asl-google-signin-button>
+            <wka-ui-button
+              (click)="signInWithGoogle($event)"
+              [class]="'!pl-2 !pr-2'"
+              [color]="ButtonColors.secondary"
+              ><wka-ui-icon
+                [static]="true"
+                [path]="'assets/icons/google.svg'"
+              ></wka-ui-icon>
+              <span class="ml-2">Zaloguj z Google</span></wka-ui-button
+            >
+          </div>
+        </div>
+      </form>
+    </ng-container>
+    <ng-template #signUpTemplate>
+      <form
+        [formGroup]="registerForm"
+        class="w-full h-fit flex flex-col justify-center items-center gap-4"
+      >
+        <wka-ui-input
+          formControlName="login"
+          type="text"
+          placeholder="login"
+        ></wka-ui-input>
+        <wka-ui-input
+          formControlName="password"
+          type="password"
+          placeholder="hasło"
+        ></wka-ui-input>
+        <wka-ui-input
+          formControlName="confirmPassword"
+          type="password"
+          placeholder="powtórz hasło"
+        ></wka-ui-input>
+        <wka-ui-input
+          formControlName="email"
+          type="text"
+          placeholder="e-mail"
+        ></wka-ui-input>
+        <wka-ui-button (click)="signUp($event)">Rejestruj</wka-ui-button>
+      </form>
+    </ng-template>
+  </div>
+</div>

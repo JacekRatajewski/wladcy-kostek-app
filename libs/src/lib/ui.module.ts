@@ -17,7 +17,12 @@ import { ThemePickerComponent } from './components/theme-picker/theme-picker.com
 import { ThemeService } from './services/theme.service';
 import { SliderComponent } from './components/slider/slider.component';
 import { RadioComponent } from './components/radio/radio.component';
-import { CdkVirtualScrollViewport, ScrollingModule } from '@angular/cdk/scrolling';
+import {
+  CdkVirtualScrollViewport,
+  ScrollingModule,
+} from '@angular/cdk/scrolling';
+import { InputComponent } from './components/input/input.component';
+import { SessionService } from './services/session.service';
 
 const components = [
   IconComponent,
@@ -27,10 +32,11 @@ const components = [
   DialogComponent,
   ThemePickerComponent,
   SliderComponent,
-  RadioComponent
+  RadioComponent,
+  InputComponent
 ];
-const modules = [CommonModule, ScrollingModule]
-const services = [LoaderService, FeatureFlagsService, ThemeService];
+const modules = [CommonModule, ScrollingModule];
+const services = [LoaderService, FeatureFlagsService, ThemeService, SessionService];
 const directives = [TooltipDirective, VarDirective];
 const providers = [
   {
@@ -42,12 +48,12 @@ const providers = [
     useClass: LoaderInterceptor,
     multi: true,
   },
-  CdkVirtualScrollViewport
+  CdkVirtualScrollViewport,
 ];
 @NgModule({
   imports: [...modules],
   exports: [...components, ...directives, ...modules],
-  declarations: [...components, ...directives ],
+  declarations: [...components, ...directives],
   providers: [...services, ...providers],
 })
 export class UiModule {}

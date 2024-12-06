@@ -18,8 +18,12 @@ export const appRoutes: Route[] = [
       {
         path: 'myBonuses',
         loadChildren: () => import('./bonuses/bonuses.module').then((m) => m.BonusesModule),
-      }
+      },
     ],
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then((m) => m.LoginModule),
   },
   {
     path: 'error/:error_code',

@@ -2,7 +2,7 @@
   class="relative flex flex-col w-full h-full bg-gradient-to-b from-tertiary to-quaternary z-10 border-l-4 border-border"
 >
   <label class="ml-6 mt-8 mb-8 font-header text-4xl">Moje Aplikacje</label>
-  <div *ngVar="isLogged$ | async as isLogged" class="w-full h-full contents">
+  <div *ngVar="sessionService.isLogged$| async as isLogged" class="w-full h-full contents">
     <ng-container *ngIf="isLogged === true; then loggedIn; else loggedOut">
     </ng-container>
     <ng-template #loggedIn>

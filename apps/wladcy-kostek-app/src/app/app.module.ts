@@ -13,9 +13,12 @@ import { ErrorComponent } from './error/error.component';
 import { NewsModule } from './news/news.module';
 import { BonusesModule } from './bonuses/bonuses.module';
 import { AuthInterceptor } from '../shared/interceptors/auth.interceptor';
-
+import { LoginModule } from './login/login.module';
+import { SocialAuthServiceConfig, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider } from '@abacritt/angularx-social-login';
 @NgModule({
   imports: [
+    GoogleSigninButtonModule,
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     UiModule,
@@ -23,6 +26,7 @@ import { AuthInterceptor } from '../shared/interceptors/auth.interceptor';
     HomeModule,
     NewsModule,
     BonusesModule,
+    LoginModule
   ],
   providers: [
     importProvidersFrom(HttpClientModule),
@@ -37,6 +41,23 @@ import { AuthInterceptor } from '../shared/interceptors/auth.interceptor';
       useClass: AuthInterceptor,
       multi: true,
     },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '785762715682-uf4drlm36f5ohrvgtbhd3aae7o3lcbhe.apps.googleusercontent.com'
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
   declarations: [AppComponent, ErrorComponent],
   bootstrap: [AppComponent],

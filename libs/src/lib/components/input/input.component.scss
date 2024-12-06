@@ -1,0 +1,24 @@
+@import '@wka/ui/src/index';
+
+.wkaInput {
+    input {
+        all: unset;
+        display: block;
+        width: calc(320px - 30px);
+    }
+
+    display: grid;
+    grid-template-columns: 30px auto;
+    column-gap: 5px;
+    width: 320px;
+    height: 32px;
+    background-color: $tertiary;
+    color: $text;
+    padding-left: 15px;
+
+    * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

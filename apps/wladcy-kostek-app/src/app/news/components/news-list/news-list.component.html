@@ -14,7 +14,9 @@
       <div
         class="min-w-96 min-h-48 rounded-lg bg-center bg-cover"
         [ngStyle]="{
-          backgroundImage: 'url(' + item.imageUrl + ')'
+          backgroundImage: item?.base64Img
+            ? 'url(data:image/jpeg;base64,' + item.base64Img + ')'
+            : 'url(' + item.imageUrl + ')'
         }"
       ></div>
       <div class="flex flex-col justify-between gap-4 h-48">

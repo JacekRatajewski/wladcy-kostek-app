@@ -13,8 +13,9 @@
           (click)="openLink(news?.url)"
           class="wka-news rounded-xl bg-center bg-cover relative flex w-full overflow-hidden cursor-pointer"
           [ngStyle]="{
-            backgroundImage:
-              'url(' + (news?.imageUrl || 'default-image.jpg') + ')'
+            backgroundImage: news?.base64Img
+              ? 'url(data:image/jpeg;base64,' + news.base64Img + ')'
+              : 'url(' + news.imageUrl + ')'
           }"
         >
           <div class="absolute bottom-0 left-0 bg-overlay p-2 w-full">
@@ -35,8 +36,7 @@
               "
             >
               {{
-                (news?.description || 'Brak opisu').substring(0, 180) +
-                  '...'
+                (news?.description || 'Brak opisu').substring(0, 180) + '...'
               }}
             </div>
           </div>

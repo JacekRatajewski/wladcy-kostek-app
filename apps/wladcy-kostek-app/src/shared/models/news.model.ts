@@ -5,4 +5,5 @@ export interface News {
   imageUrl: string;
   url: string;
   id: number;
+  base64Img: string;
 }

@@ -6,10 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrl: './icon.component.scss',
 })
 export class IconComponent {
-  @Input() public path!: string
-  @Input() public class!: string
-  @Input() public tooltip!: string
-  @Input() public id!: string | number
-  @Input() public active = false
-  @Input() public static = false
+  @Input() public path!: string;
+  @Input() public class!: string;
+  @Input() public tooltip!: string;
+  @Input() public id!: string | number;
+  @Input() public active = false;
+  @Input() public static = false;
+  @Input() public disabled = false;
 }

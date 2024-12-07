@@ -5,10 +5,12 @@
   <div
     *ngFor="let item of items; index as i"
     class="cursor-pointer w-full"
+    [class.cursor-default]="item.disabled ?? false"
     [class.absolute]="item.type === SidebarItemType.settings"
     [class.bottom-0]="item.type === SidebarItemType.settings"
   >
     <wka-ui-icon
+      [disabled]="item.disabled ?? false"
       [active]="activeId === i"
       [routerLink]="item.route"
       [tooltip]="item.tooltip"

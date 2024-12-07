@@ -2,7 +2,7 @@ import { Component, ViewChild, ViewChildren } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { BehaviorSubject, filter } from 'rxjs';
 import { SidebarItem, SidebarItemType } from './models';
-import { DialogComponent } from '@wka/ui';
+import { DialogComponent, SessionService } from '@wka/ui';
 import { SettingsDialogComponent } from '../settings-dialog/settings-dialog.component';
 
 @Component({
@@ -22,6 +22,7 @@ export class SidebarComponent {
       tooltip: 'Moje aplikacje',
       iconPath: 'assets/icons/apps.svg',
       route: '/apps',
+      disabled: this.sessionService.isLogged$.value === false,
       onClick: this.onClick.bind(this),
     },
     {
@@ -43,7 +44,7 @@ export class SidebarComponent {
   public activeItemId$ = new BehaviorSubject<number>(0);
   @ViewChild(SettingsDialogComponent) dialog!: SettingsDialogComponent;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public sessionService: SessionService) {
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: any) => {

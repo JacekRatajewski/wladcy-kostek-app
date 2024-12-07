@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {  BaseResponse2 } from '@wka/ui';
+import { BaseResponse2 } from '@wka/ui';
 import { map } from 'rxjs';
 import { IUser } from './model/user.model';
 
@@ -8,9 +8,15 @@ import { IUser } from './model/user.model';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  googleLogin(token: string) {
+  googleLogin(token: string, id: string) {
     return this.http
-      .post(`${process.env.API_URL}/auth/google-login`, { token })
+      .post(
+        `${process.env.API_URL}/auth/google`,
+        { token, id },
+        {
+          headers: { 'X-Skip-Authorization': 'true' },
+        }
+      )
       .pipe(map((res: any) => (res as BaseResponse2<IUser>).result));
   }
 
@@ -22,7 +28,7 @@ export class AuthService {
 
   register(login: string, password: string, email: string) {
     return this.http
-      .post(`${process.env.API_URL}/auth/login`, { login, password, email })
+      .post(`${process.env.API_URL}/auth/register`, { login, password, email })
       .pipe(map((res: any) => (res as BaseResponse2<IUser>).result));
   }
 }

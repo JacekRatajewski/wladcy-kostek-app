@@ -9,6 +9,7 @@ export * from './lib/components/theme-picker/theme-picker.component';
 export * from './lib/components/slider/slider.component';
 export * from './lib/components/radio/radio.component';
 export * from './lib/components/input/input.component';
+export * from './lib/components/menu/menu.component';
 // DIRECTIVES
 export * from './lib/directives/tooltip/tooltip.directive';
 export * from './lib/directives/var/var.directive';
@@ -29,5 +30,6 @@ export * from './lib/components/button/models/colors.model';
 export * from './lib/models/base-response.model';
 export * from './lib/models/base-response-2.model';
 export * from './lib/models/user.model';
+export * from './lib/components/menu/models/menu.models';
 // UTILS
 export * from './lib/utils/tests/mocks/cdkScroll.mock'

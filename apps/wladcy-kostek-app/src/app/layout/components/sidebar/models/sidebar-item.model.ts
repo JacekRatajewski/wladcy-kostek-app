@@ -3,6 +3,7 @@ export interface SidebarItem {
     iconPath: string
     tooltip: string
     type?: SidebarItemType
+    disabled?: boolean
     onClick: (id: number) => void
 }
 

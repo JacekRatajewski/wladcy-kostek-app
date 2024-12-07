@@ -1,10 +1,49 @@
-<div class="relative w-full h-full flex justify-between items-center border-b-4 border-border">
-    <wka-ui-icon [static]="true" path="assets/icons/logo.svg" id="logo" class="p-2"></wka-ui-icon>
-    <div class="absolute top-0 w-full">
-        <wka-ui-loader></wka-ui-loader>
-    </div>
-    <div class="flex w-fit gap-4 items-center mr-4">
-        <wka-ui-input icon="assets/icons/search.svg" type="text" placeholder="szukaj"></wka-ui-input>
-        <wka-ui-button [onClick]="signIn.bind(this)" [color]="ButtonColors.primary">Zaloguj</wka-ui-button>
-    </div>
+<div
+  class="relative w-full h-full flex justify-between items-center border-b-4 border-border"
+>
+  <wka-ui-icon
+    [static]="true"
+    path="assets/icons/logo.svg"
+    id="logo"
+    class="p-2"
+  ></wka-ui-icon>
+  <div class="absolute top-0 w-full">
+    <wka-ui-loader></wka-ui-loader>
+  </div>
+  <div class="flex w-fit gap-4 items-center mr-4">
+    <wka-ui-input
+      icon="assets/icons/search.svg"
+      type="text"
+      placeholder="szukaj"
+    ></wka-ui-input>
+    <ng-container
+      *ngIf="isLogged === false; else loggedIn"
+    >
+      <wka-ui-button
+        [onClick]="signIn.bind(this)"
+        [color]="ButtonColors.primary"
+        >Zaloguj</wka-ui-button
+      >
+    </ng-container>
+    <ng-template #loggedIn>
+      <div *ngVar="session() as user" class="flex gap-8 items-center mr-4">
+        <wka-ui-icon
+          class="cursor-pointer"
+          [static]="true"
+          path="assets/icons/notifications.svg"
+        ></wka-ui-icon>
+        <img
+          class="wka-avatar rounded-full h-12 w-12 border-solid border-background border-2 outline-2 outline-primary outline-offset-2"
+          [src]="user.avatarUrl"
+        />
+        <wka-ui-icon
+          (click)="isMenuOpen$.next(!isMenuOpen$.value)"
+          class="cursor-pointer"
+          [static]="true"
+          path="assets/icons/dots.svg"
+        ></wka-ui-icon>
+        <wka-ui-menu [open$]="isMenuOpen$.asObservable()" [items]="menuItems"></wka-ui-menu>
+      </div>
+    </ng-template>
+  </div>
 </div>

@@ -1,0 +1,5 @@
+<div class="wka-menu" *ngIf="open$ | async">
+  <div [class]="item.class" *ngFor="let item of items" (click)="item.click()">
+    {{ item.name }}
+  </div>
+</div>

@@ -1,18 +1,18 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FeatureFlagsService, SpinnerComponent, spinner } from '@wka/ui';
 import { FeatureFlags } from '../../../../shared/models/feature-flags.model';
 import { News } from '../../../../shared/models/news.model';
 import { NewsService } from '../../../../shared/services/news.service';
-import { delay } from 'rxjs';
+import { BehaviorSubject, delay, Subject } from 'rxjs';
 
 @Component({
   selector: 'wka-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements OnInit {
   @ViewChild(SpinnerComponent) spinnerComponent!: SpinnerComponent;
-  public news: News[] = [];
+  public news$: BehaviorSubject<News[]> = new BehaviorSubject([] as News[]);
   public error!: string;
   constructor(
     private featureFlagService: FeatureFlagsService,
@@ -24,14 +24,17 @@ export class HomeComponent implements AfterViewInit {
       },
     });
   }
-  ngAfterViewInit(): void {
-    this.newsService
-      .getHomeNews$(6)
-      .pipe(spinner(this.spinnerComponent))
-      .subscribe({
-        next: (news: News[]) => (this.news = news),
-        error: (err) => (this.error = err),
-      });
+  ngOnInit(): void {
+    this.newsService.getHomeNews$(6).subscribe({
+      next: (news: News[]) => this.news$.next(news),
+      error: (err) => (this.error = err),
+    });
+  }
+
+  public openLink(href?: string) {
+    if (typeof window !== 'undefined' && window) {
+      (window as any).open(href, '_blank').focus();
+    }
   }
 
   public getFullNews() {
@@ -39,7 +42,7 @@ export class HomeComponent implements AfterViewInit {
       .getHomeNews$()
       .pipe(spinner(this.spinnerComponent))
       .subscribe({
-        next: (news: News[]) => (this.news = news),
+        next: (news: News[]) => this.news$.next(news),
         error: (err) => (this.error = err),
       });
   }

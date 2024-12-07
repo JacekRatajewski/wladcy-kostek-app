@@ -12,6 +12,8 @@ export class ButtonComponent {
   @Input() href!: string;
   @Input() public onClick = (event: any) => {
     this.click.emit(event);
+    event.preventDefault();
+    event.stopPropagation();
   };
   @Output() click: EventEmitter<any> = new EventEmitter();
   public ButtonColors = ButtonColors;

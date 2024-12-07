@@ -5,6 +5,16 @@
         }
     }
 
+    &.wka-icon--disabled {
+        pointer-events: none !important;
+        cursor: default !important;
+
+        img {
+            cursor: default !important;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(10%) contrast(102%) !important
+        }
+    }
+
     &.wka-icon--active {
         img {
             filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(336deg) brightness(102%) contrast(102%)

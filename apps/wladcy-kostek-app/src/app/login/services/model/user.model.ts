@@ -4,4 +4,5 @@ export interface IUser extends User {
   email?: string;
   fromGoogle?: boolean;
   accountCreationDate?: Date;
+  avatarUrl?: string;
 }

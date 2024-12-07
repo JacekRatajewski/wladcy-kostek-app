@@ -11,7 +11,9 @@ export class InputComponent {
   @Input() icon!: string;
   @Input() placeholder!: string;
   @Input() public onChange = (event: any) => {
-    this.change.emit(event);
+    this.change.emit(`${event.currentTarget.value}`);
+    event.preventDefault();
+    event.stopPropagation();
   };
-  @Output() change: EventEmitter<any> = new EventEmitter();
+  @Output() change: EventEmitter<string> = new EventEmitter();
 }

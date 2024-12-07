@@ -5,43 +5,48 @@
       class="wka-news-container grid lg:grid-cols-3 sm:grid-cols-3 grid-rows-news gap-8 p-8"
     >
       <div
-        *ngFor="let newsItem of news"
+        *ngFor="let news of news$.asObservable() | async; index as i"
         class="w-full h-full min-h-52 flex"
-        [class.wka-big-news]="newsItem.id === 0"
+        [class.wka-big-news]="i === 0"
       >
         <div
-          *ngVar="newsItem.id === 0 as isBigNews"
+          (click)="openLink(news?.url)"
           class="wka-news rounded-xl bg-center bg-cover relative flex w-full overflow-hidden cursor-pointer"
           [ngStyle]="{
-            backgroundImage: 'url(' + newsItem.imageUrl + ')'
+            backgroundImage:
+              'url(' + (news?.imageUrl || 'default-image.jpg') + ')'
           }"
         >
-          <div class="absolute bottom-0 left-0 bg-overlay p-2">
+          <div class="absolute bottom-0 left-0 bg-overlay p-2 w-full">
             <div
               [class]="
                 'text-text font-text ' +
-                (!isBigNews ? 'lg:text-xl text-xl' : 'lg:text-4xl text-xl') +
+                (i !== 0 ? 'lg:text-xl text-xl' : 'lg:text-4xl text-xl') +
                 ' text-ellipsis w-full overflow-hidden mb-2'
               "
             >
-              {{ newsItem.title.substring(0, 30) + '...' }}
+              {{ (news?.title || 'Brak tytułu').substring(0, 25) + '...' }}
             </div>
             <div
               [class]="
                 'text-text font-text ' +
-                (!isBigNews ? 'lg:text-xs text-xs' : 'lg:text-lg text-xs') +
+                (i !== 0 ? 'lg:text-xs text-xs' : 'lg:text-lg text-xs') +
                 ' text-ellipsis w-full overflow-hidden'
               "
             >
-              {{ newsItem.shortDescription.substring(0, 180) + '...' }}
+              {{
+                (news?.description || 'Brak opisu').substring(0, 180) +
+                  '...'
+              }}
             </div>
           </div>
         </div>
       </div>
+
       <wka-ui-spinner class="lg:w-4/6"></wka-ui-spinner>
     </div>
     <div
-      *ngIf="news.length <= 6"
+      *ngIf="news$.value.length <= 6 && news$.value.length !== 0"
       class="relative bottom-2 text-center w-full cursor-pointer text-secondary underline"
       (click)="getFullNews()"
     >

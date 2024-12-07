@@ -31,21 +31,39 @@ export class QuickBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForms();
-
-    this.authService.authState.subscribe((user) => {
-      if (user) {
-        this.aService.googleLogin(user.idToken).subscribe({
-          next: (value) => {
-            if (value) {
-              this.sessionService.setSessionKey(value.email as string);
-              this.sessionService.login(value);
-            } else {
-              alert('Logowanie przez google się nie powiodło!');
-            }
-          },
+    this.sessionService.isLogged$.subscribe((isLogged) => {
+      if (!isLogged) {
+        this.authService.authState.subscribe((user) => {
+          if (user) {
+            this.aService.googleLogin(user.idToken, user.id).subscribe({
+              next: (value) => {
+                if (value) {
+                  this.sessionService.isLogged$.subscribe((value) => {
+                    if (value) {
+                      this.router.navigateByUrl('/').then(() => {
+                        window.location.reload();
+                      });
+                    }
+                  });
+                  this.sessionService.setSessionKey(value.email as string);
+                  this.sessionService.login(value);
+                } else {
+                  alert('Logowanie przez google się nie powiodło!');
+                }
+              },
+            });
+          }
         });
       }
     });
+  }
+
+  public onChangeInput(
+    value: any,
+    formControlName: string,
+    formGroup: FormGroup
+  ) {
+    formGroup.controls[formControlName].setValue(value);
   }
 
   private initForms(): void {
@@ -58,7 +76,7 @@ export class QuickBarComponent implements OnInit {
       login: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required]],
     });
   }
 

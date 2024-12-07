@@ -11,12 +11,12 @@
         class="w-full h-fit flex flex-col justify-center items-center gap-4"
       >
         <wka-ui-input
-          formControlName="login"
+          (change)="onChangeInput($event, 'login', loginForm)"
           type="text"
           placeholder="login"
         ></wka-ui-input>
         <wka-ui-input
-          formControlName="password"
+          (change)="onChangeInput($event, 'password', loginForm)"
           type="password"
           placeholder="hasło"
         ></wka-ui-input>
@@ -57,22 +57,22 @@
         class="w-full h-fit flex flex-col justify-center items-center gap-4"
       >
         <wka-ui-input
-          formControlName="login"
+          (change)="onChangeInput($event, 'login', registerForm)"
           type="text"
           placeholder="login"
         ></wka-ui-input>
         <wka-ui-input
-          formControlName="password"
+          (change)="onChangeInput($event, 'password', registerForm)"
           type="password"
           placeholder="hasło"
         ></wka-ui-input>
         <wka-ui-input
-          formControlName="confirmPassword"
+          (change)="onChangeInput($event, 'confirmPassword', registerForm)"
           type="password"
           placeholder="powtórz hasło"
         ></wka-ui-input>
         <wka-ui-input
-          formControlName="email"
+          (change)="onChangeInput($event, 'email', registerForm)"
           type="text"
           placeholder="e-mail"
         ></wka-ui-input>

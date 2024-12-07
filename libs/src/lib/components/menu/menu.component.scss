@@ -1,0 +1,19 @@
+@import '@wka/ui/src/index';
+
+.wka-menu {
+    position: absolute;
+    background: $quinary;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    top: 5rem;
+    right: 4rem;
+    gap: 6px;
+    z-index: 9999;
+
+    div {
+        cursor: pointer;
+    }
+}

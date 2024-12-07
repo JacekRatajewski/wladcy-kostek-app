@@ -9,7 +9,7 @@ const init = () => {
 };
 
 if (isDevMode()) {
-  worker(process.env.API_URL).start().then(init);
+  init();
 } else {
   init();
 }

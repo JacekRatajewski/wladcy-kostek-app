@@ -23,6 +23,7 @@ import {
 } from '@angular/cdk/scrolling';
 import { InputComponent } from './components/input/input.component';
 import { SessionService } from './services/session.service';
+import { MenuComponent } from './components/menu/menu.component';
 
 const components = [
   IconComponent,
@@ -33,7 +34,8 @@ const components = [
   ThemePickerComponent,
   SliderComponent,
   RadioComponent,
-  InputComponent
+  InputComponent,
+  MenuComponent
 ];
 const modules = [CommonModule, ScrollingModule];
 const services = [LoaderService, FeatureFlagsService, ThemeService, SessionService];
@@ -53,7 +55,7 @@ const providers = [
 @NgModule({
   imports: [...modules],
   exports: [...components, ...directives, ...modules],
-  declarations: [...components, ...directives],
+  declarations: [...components, ...directives,],
   providers: [...services, ...providers],
 })
 export class UiModule {}

@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, timer } from 'rxjs';
-
+import { User } from '../models/user.model';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
   private SESSION_KEY = localStorage.getItem('SESSION_KEY') ?? '';
   private readonly EXPIRATION_TIME = 7 * 24 * 60 * 60 * 1000;
-  private isLoggedSubject = new BehaviorSubject<boolean>(this.checkSession());
+  isLogged$ = new BehaviorSubject<boolean>(this.checkSession());
 
-  isLogged$: Observable<boolean> = this.isLoggedSubject.asObservable();
-
-  constructor() {
+  constructor(private authService: SocialAuthService) {
     this.initializeSessionExpirationWatcher();
   }
 
@@ -20,19 +19,20 @@ export class SessionService {
     localStorage.setItem('SESSION_KEY', this.SESSION_KEY);
   }
 
-  login(userData: any): void {
+  login(userData: User): void {
     const sessionData = {
       user: userData,
       timestamp: Date.now(),
     };
     localStorage.setItem(this.SESSION_KEY, JSON.stringify(sessionData));
-    this.isLoggedSubject.next(true);
+    this.isLogged$.next(true);
     this.initializeSessionExpirationWatcher();
   }
 
   logout(): void {
     localStorage.removeItem(this.SESSION_KEY);
-    this.isLoggedSubject.next(false);
+    this.isLogged$.next(false);
+    this.authService.signOut();
   }
 
   private checkSession(): boolean {
@@ -41,7 +41,7 @@ export class SessionService {
     return Date.now() - session.timestamp < this.EXPIRATION_TIME;
   }
 
-  private getSession(): { user: any; timestamp: number } | null {
+  public getSession(): { user: User; timestamp: number } | null {
     const session = localStorage.getItem(this.SESSION_KEY);
     return session ? JSON.parse(session) : null;
   }

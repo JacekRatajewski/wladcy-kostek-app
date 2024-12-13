@@ -4,6 +4,7 @@
     position: relative;
     transition: opacity 1s;
     z-index: 1;
+
     &:hover::after {
         content: '\A';
         position: absolute;

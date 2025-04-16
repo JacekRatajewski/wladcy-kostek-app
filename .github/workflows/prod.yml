@@ -12,9 +12,10 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
-          node-version: '20.11.1'
+          node-version: '22.11.0'
           cache: 'npm'
-      - run: npm i
+      - run: npm install @nx/nx-linux-x64-gnu --ignore-scripts
+      - run: npm ci
       - run: npx nx run wladcy-kostek-app:build --configuration=production
         env:
             API_URL: ${{ secrets.api_url }}

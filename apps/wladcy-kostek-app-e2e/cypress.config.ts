@@ -1,17 +1,12 @@
-import { nxE2EPreset } from '@nx/cypress/plugins/cypress-preset';
-
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
-    ...nxE2EPreset(__filename, {
-      cypressDir: 'src',
-      webServerCommands: {
-        default: 'nx run wladcy-kostek-app:serve:development',
-        production: 'nx run wladcy-kostek-app:serve:production',
-      },
-      ciWebServerCommand: 'nx run wladcy-kostek-app:serve-static',
-    }),
     baseUrl: 'http://localhost:4200',
+    specPattern: 'src/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    supportFile: 'src/support/e2e.ts',
+    setupNodeEvents(on, config) {
+      return config;
+    },
   },
 });

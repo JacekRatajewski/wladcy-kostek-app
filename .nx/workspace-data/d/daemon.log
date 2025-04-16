@@ -1,0 +1,171 @@
+[NX Daemon Server] - 2025-04-16T08:43:47.122Z - Started listening on: \\.\pipe\nx\C:\Users\broda\AppData\Local\Temp\fceaf3f09ba0d21be212\d.sock
+[NX Daemon Server] - 2025-04-16T08:43:47.126Z - [WATCHER]: Subscribed to changes within: F:\Repos\wladcy-kostek-app2\wladcy-kostek-app (native)
+[NX Daemon Server] - 2025-04-16T08:43:47.136Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:43:47.137Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:43:47.138Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:43:47.139Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-04-16T08:43:47.506Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-04-16T08:43:47.506Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:43:47.506Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:43:47.988Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+  AggregateCreateNodesError: An error occurred while processing files for the @nx/jest/plugin plugin.
+    - The "path" argument must be of type string. Received undefined
+      at LoadedNxPlugin.createNodes.<computed> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\project-graph\plugins\internal-api.js:48:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Promise.all (index 2)
+      at async processFilesAndCreateAndSerializeProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:148:43)
+      at async getCachedSerializedProjectGraphPromise (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:46:16)
+      at async handleRequestProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\handle-request-project-graph.js:12:24)
+      at async handleResult (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:130:16)
+      at async handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:89:9)
+      at async F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:9
+[NX Daemon Server] - 2025-04-16T08:43:47.994Z - Time taken for 'Load Nx Plugin: F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\plugins\project-json\build-nodes\package-json-next-to-project-json' 363.7611ms
+[NX Daemon Server] - 2025-04-16T08:43:47.994Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:43:47.994Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 849. Response time: 6.
+[NX Daemon Server] - 2025-04-16T08:43:48.004Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:44:12.818Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:44:12.818Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:44:12.818Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:44:12.820Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-04-16T08:44:12.821Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-04-16T08:44:12.821Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:44:12.821Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:44:13.008Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+  AggregateCreateNodesError: An error occurred while processing files for the @nx/jest/plugin plugin.
+    - The "path" argument must be of type string. Received undefined
+      at LoadedNxPlugin.createNodes.<computed> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\project-graph\plugins\internal-api.js:48:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Promise.all (index 2)
+      at async processFilesAndCreateAndSerializeProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:148:43)
+      at async getCachedSerializedProjectGraphPromise (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:46:16)
+      at async handleRequestProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\handle-request-project-graph.js:12:24)
+      at async handleResult (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:130:16)
+      at async handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:89:9)
+      at async F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:9
+[NX Daemon Server] - 2025-04-16T08:44:13.013Z - Time taken for 'hash changed files from watcher' 0.00480000000243308ms
+[NX Daemon Server] - 2025-04-16T08:44:13.013Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:44:13.013Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 188. Response time: 5.
+[NX Daemon Server] - 2025-04-16T08:44:13.022Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:45:14.082Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:45:14.083Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:45:14.083Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:45:14.085Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-04-16T08:45:14.085Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-04-16T08:45:14.085Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:45:14.085Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:45:14.218Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+  AggregateCreateNodesError: An error occurred while processing files for the @nx/jest/plugin plugin.
+    - The "path" argument must be of type string. Received undefined
+      at LoadedNxPlugin.createNodes.<computed> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\project-graph\plugins\internal-api.js:48:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Promise.all (index 2)
+      at async processFilesAndCreateAndSerializeProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:148:43)
+      at async getCachedSerializedProjectGraphPromise (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:46:16)
+      at async handleRequestProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\handle-request-project-graph.js:12:24)
+      at async handleResult (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:130:16)
+      at async handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:89:9)
+      at async F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:9
+[NX Daemon Server] - 2025-04-16T08:45:14.224Z - Time taken for 'hash changed files from watcher' 0.004799999995157123ms
+[NX Daemon Server] - 2025-04-16T08:45:14.224Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:45:14.224Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 133. Response time: 6.
+[NX Daemon Server] - 2025-04-16T08:45:14.233Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:45:24.087Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:45:24.087Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:45:24.087Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:45:24.090Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-04-16T08:45:24.090Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-04-16T08:45:24.090Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:45:24.090Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:45:24.213Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+  AggregateCreateNodesError: An error occurred while processing files for the @nx/jest/plugin plugin.
+    - The "path" argument must be of type string. Received undefined
+      at LoadedNxPlugin.createNodes.<computed> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\project-graph\plugins\internal-api.js:48:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Promise.all (index 2)
+      at async processFilesAndCreateAndSerializeProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:148:43)
+      at async getCachedSerializedProjectGraphPromise (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:46:16)
+      at async handleRequestProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\handle-request-project-graph.js:12:24)
+      at async handleResult (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:130:16)
+      at async handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:89:9)
+      at async F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:9
+[NX Daemon Server] - 2025-04-16T08:45:24.217Z - Time taken for 'hash changed files from watcher' 0.005499999999301508ms
+[NX Daemon Server] - 2025-04-16T08:45:24.217Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:45:24.218Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 123. Response time: 5.
+[NX Daemon Server] - 2025-04-16T08:45:24.229Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:45:49.448Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:45:49.449Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:45:49.449Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:45:49.451Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-04-16T08:45:49.451Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-04-16T08:45:49.451Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:45:49.451Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:45:49.550Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+  AggregateCreateNodesError: An error occurred while processing files for the @nx/jest/plugin plugin.
+    - The "path" argument must be of type string. Received undefined
+      at LoadedNxPlugin.createNodes.<computed> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\project-graph\plugins\internal-api.js:48:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Promise.all (index 2)
+      at async processFilesAndCreateAndSerializeProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:148:43)
+      at async getCachedSerializedProjectGraphPromise (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:46:16)
+      at async handleRequestProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\handle-request-project-graph.js:12:24)
+      at async handleResult (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:130:16)
+      at async handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:89:9)
+      at async F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:9
+[NX Daemon Server] - 2025-04-16T08:45:49.554Z - Time taken for 'hash changed files from watcher' 0.0044999999954598024ms
+[NX Daemon Server] - 2025-04-16T08:45:49.555Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:45:49.555Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 99. Response time: 5.
+[NX Daemon Server] - 2025-04-16T08:45:49.566Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:46:00.506Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:46:00.507Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:46:00.508Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:46:00.508Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-04-16T08:46:00.508Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-04-16T08:46:00.511Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2025-04-16T08:46:00.511Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2025-04-16T08:46:00.511Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:46:00.511Z - [REQUEST]: 
+[NX Daemon Server] - 2025-04-16T08:46:00.719Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+  AggregateCreateNodesError: An error occurred while processing files for the @nx/jest/plugin plugin.
+    - The "path" argument must be of type string. Received undefined
+      at LoadedNxPlugin.createNodes.<computed> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\project-graph\plugins\internal-api.js:48:27)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Promise.all (index 2)
+      at async processFilesAndCreateAndSerializeProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:148:43)
+      at async getCachedSerializedProjectGraphPromise (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:46:16)
+      at async handleRequestProjectGraph (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\handle-request-project-graph.js:12:24)
+      at async handleResult (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:130:16)
+      at async handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:89:9)
+      at async F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:9
+[NX Daemon Server] - 2025-04-16T08:46:00.727Z - Time taken for 'hash changed files from watcher' 0.006900000007590279ms
+[NX Daemon Server] - 2025-04-16T08:46:00.727Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:46:00.727Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 208. Response time: 8.
+[NX Daemon Server] - 2025-04-16T08:46:00.734Z - [REQUEST]: Responding to the client with an error. Invalid payload from the client Unsupported payload sent to daemon server: {"type":"REQUEST_FILE_DATA"}
+Error: Unsupported payload sent to daemon server: {"type":"REQUEST_FILE_DATA"}
+    at handleMessage (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:125:104)
+    at F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\daemon\server\server.js:55:15
+    at Socket.<anonymous> (F:\Repos\wladcy-kostek-app2\wladcy-kostek-app\node_modules\@nx\js\node_modules\nx\src\utils\consume-messages-from-socket.js:13:17)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
+[NX Daemon Server] - 2025-04-16T08:46:00.735Z - Done responding to the client null
+[NX Daemon Server] - 2025-04-16T08:46:16.513Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:16.790Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:18.396Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:19.368Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:19.860Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:20.155Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:20.339Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:20.555Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:46:20.648Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:47:06.424Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2025-04-16T08:47:06.424Z - [WATCHER]: Stopping the watcher for F:\Repos\wladcy-kostek-app2\wladcy-kostek-app (sources)
+[NX Daemon Server] - 2025-04-16T08:47:06.424Z - [WATCHER]: Stopping the watcher for F:\Repos\wladcy-kostek-app2\wladcy-kostek-app (outputs)
+[NX Daemon Server] - 2025-04-16T08:47:06.424Z - Server stopped because: "NX_VERSION_CHANGED"

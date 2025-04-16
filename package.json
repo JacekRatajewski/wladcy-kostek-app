@@ -10,11 +10,6 @@
     "prepare": "husky"
   },
   "private": true,
-  "overrides": {
-    "@discordjs/builders": {
-      "@sapphire/shapeshift": "^3.6.0"
-    }
-  },
   "dependencies": {
     "@3d-dice/dice-box": "^1.0.12",
     "@abacritt/angularx-social-login": "^2.1.0",
@@ -37,7 +32,7 @@
     "axios": "^1.6.0",
     "discord-interactions": "^3.2.0",
     "discord-music-player": "^9.1.1",
-    "discord.js": "^14.15.3",
+    "discord.js": "^14.18.0",
     "dotenv": "^16.0.3",
     "express": "^4.19.2",
     "ffmpeg-static": "^5.2.0",
@@ -46,9 +41,11 @@
     "html2canvas": "^1.4.1",
     "libsodium-wrappers": "^0.7.13",
     "maplibre-gl": "^4.7.0",
+    "node-cron": "^3.0.3",
     "node-fetch": "^3.3.0",
     "particle.js": "^1.0.7",
     "path": "^0.12.7",
+    "puppeteer": "^24.6.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "youtube-dl-exec": "^3.0.2",

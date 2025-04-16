@@ -2,16 +2,23 @@
 import cards from 'C:/envs/cards.json';
 // @ts-ignore: Enviroment files
 import config from 'C:/envs/config.json';
+// @ts-ignore: Enviroment files
+import monthlyMessages from 'C:/envs/monthlyMessages.json';
 import * as libsodium from 'libsodium-wrappers';
+import cron from 'node-cron';
 import {
   ChannelType,
   Client,
   EmbedBuilder,
   GatewayIntentBits,
+  GuildTextBasedChannel,
   HexColorString,
   REST,
   Routes,
+  TextBasedChannel,
+  AttachmentBuilder,
 } from 'discord.js';
+import puppeteer, { ElementHandle } from 'puppeteer';
 import { RollService, rollCommand } from './commands/roll';
 import { commands as cardCommands } from './commands/cards';
 import { playCommand } from './commands/play';
@@ -184,7 +191,7 @@ client.on('interactionCreate', async (interaction) => {
         voiceConnection = joinVoiceChannel({
           channelId: interaction.channelId,
           guildId: interaction.guildId,
-          adapterCreator: interaction.guild.voiceAdapterCreator,
+          adapterCreator: interaction.guild.voiceAdapterCreator as any,
         });
         voiceConnection.on(
           VoiceConnectionStatus.Disconnected,
@@ -226,7 +233,7 @@ client.on('interactionCreate', async (interaction) => {
             .on(AudioPlayerStatus.Idle, playFromPlaylist(songs));
           playFromPlaylist(songs).call(this);
         });
-      } else if(interaction.options.getSubcommand() === 'end') {
+      } else if (interaction.options.getSubcommand() === 'end') {
         if (csub) csub.unsubscribe();
         player.off(AudioPlayerStatus.Idle, playFromPlaylist([]));
         voiceConnection.destroy();
@@ -249,3 +256,60 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.login(config.DISCORD_TOKEN);
+async function sendMonthlyMessage(channel, message: string) {
+  const browser = await puppeteer.launch({
+    headless: false,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
+  });
+
+  const page = await browser.newPage();
+  await page.goto('https://lehazyo.github.io/homm3-messages/', {
+    waitUntil: 'networkidle2',
+  });
+  await page.setViewport({ width: 1920, height: 1080 });
+  console.log(`Message: ${message}`);
+
+  const inputValue = await page.$eval(
+    '#input',
+    (el: HTMLInputElement) => el.value
+  );
+
+  await page.click('#input');
+  for (let i = 0; i < inputValue.length; i++) {
+    await page.keyboard.press('Backspace');
+  }
+
+  await page.type('#input', message);
+  await page.waitForSelector('.download-button');
+
+  const base64 = await page.$eval("#canvas", (el:HTMLCanvasElement) => el.toDataURL())
+  await browser.close();
+  const base64Data = base64.replace(/^data:image\/png;base64,/, '');
+
+  const imageBuffer = Buffer.from(base64Data, 'base64');
+  console.log(imageBuffer);
+  const attachment = new AttachmentBuilder(imageBuffer, {
+    name: 'message.png',
+  });
+
+  await channel.send({
+    content: ``,
+    files: [attachment],
+  });
+}
+
+cron.schedule('0 9 1 * *', async () => {
+  const channelId = '1361982080728436806';
+  const channel = await client.channels.fetch(channelId);
+
+  if (channel?.isTextBased()) {
+    const randomIndex = Math.floor(Math.random() * monthlyMessages.length);
+    const message = monthlyMessages[randomIndex];
+    await sendMonthlyMessage(
+      channel,
+      `Astrologowie ogłaszają miesiąc ${message.title}
+      
+      ${message.content}`
+    );
+  }
+});

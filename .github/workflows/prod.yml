@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '22.14.0'
           cache: 'npm'
-      - run: npm i
+      - run: npm i @nx/nx-linux-x64-gnu
       - run: npx nx run wladcy-kostek-app:build --configuration=production
         env:
             API_URL: ${{ secrets.api_url }}
